@@ -1,0 +1,224 @@
+.navbar-brand {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 28px;
+    color: antiquewhite;
+    padding-left: 15px;
+}
+
+.navbar-brand span {
+    color: rgb(185, 206, 93);
+}
+
+.navbar-toggler {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    margin-right: 10px;
+}
+
+.offcanvas {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, .18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.nav-link {
+    color: beige;
+}
+
+#offcanvasNavbarLabel {
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 30px;
+    color: beige;
+}
+
+#offcanvasNavbarLabel span {
+    color: rgb(185, 206, 93);
+}
+
+.navbar-toggler:hover {
+    transform: translateY(4px);
+}
+
+.nav-link {
+    font-family: Poppins;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: start;
+    padding-left: 50px;
+    width: 100%;
+    height: 50%;
+    margin: 5px 0;
+    margin-left: 10px;
+    line-height: 50px;
+    border-radius: 15px;
+    transition: .1s;
+    background: rgba(255, 255, 255, 0.1);
+
+}
+
+.nav-link {
+    transition-delay: calc(.1s * var(--i));
+
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(4px);
+
+}
+
+
+.jumbotron {
+    background-image: url(img/bg.jpg) !important;
+    background-size: cover;
+    height: 720px;
+}
+
+.container img {
+    block-size: 150px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 100px;
+    border-style: solid;
+    border-color: rgb(155, 154, 154);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    text-align: center;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px 0px 30px 30px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.display-4 {
+    font-family: poppins;
+    font-weight: bold;
+    color: antiquewhite;
+}
+
+.display-5 {
+    font-family: poppins;
+    font-weight: bold;
+    color: beige;
+}
+
+.display-4 span {
+    color: rgb(126, 181, 150);
+
+}
+
+.display-3 {
+    color: bisque;
+    font-size: large;
+    margin-top: 30px;
+}
+
+p {
+    color: burlywood;
+}
+
+.d-flex .p-2 {
+    margin: auto;
+    margin-top: -100px;
+    background-color: rgba(255, 255, 255, 0);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border-radius: 0px 0px 30px 30px; */
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 3px 15px rgba(255, 255, 255, .2);
+}
+
+.d-flex .p-2:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.bx {
+    margin-left: 14px;
+    margin-top: 30%;
+}
+
+
+
+/* DEKTOP VERSION */
+@media (min-width: 992px) {
+    .navbar-brand {
+        padding-left: 100px;
+        font-size: 35px;
+    }
+
+    .offcanvas {
+        margin-right: 90px;
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 3px solid #252022;
+        width: 50%;
+        margin: auto;
+        margin-bottom: -3px;
+    }
+
+    .nav-link:hover {
+        background: none;
+        transform: translateX(4px);
+    }
+
+    .nav-link {
+        background: none;
+    }
+
+    .container img {
+        margin-left: 950px;
+        margin-top: 250px;
+        block-size: 300px;
+    }
+
+    .display-3 {
+        margin-top: -250px;
+    }
+
+    .display-5 {
+        font-size: 70px;
+        padding-bottom: 10px;
+    }
+
+    p {
+        padding-bottom: 25px;
+    }
+
+    .container {
+        text-align: start;
+    }
+
+    .jumbotron {
+        background-size: cover;
+        height: 800px;
+    }
+
+    .d-flex .p-2 {
+        margin: 0%;
+        margin-left: 110px;
+        margin-top: -180px;
+    }
