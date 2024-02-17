@@ -2,12 +2,15 @@
     font-family: Poppins;
     font-weight: bold;
     font-size: 28px;
-    color: antiquewhite;
-    padding-left: 15px;
+    color: beige;
+    padding-top: 8px;
+    text-shadow: 0 0px 5px rgba(255, 255, 255, 0.3);
+    margin-top: 0px;
+    margin-left: 10px;
 }
 
 .navbar-brand span {
-    color: rgb(185, 206, 93);
+    color: rgb(94, 127, 209);
 }
 
 .navbar-toggler {
@@ -17,7 +20,11 @@
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, .18);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    padding: auto;
     margin-right: 10px;
+    margin-left: 50px;
+    margin-top: -20px;
+
 }
 
 .offcanvas {
@@ -45,7 +52,7 @@
 }
 
 .navbar-toggler:hover {
-    transform: translateY(4px);
+    transform: translateY(-2px);
 }
 
 .nav-link {
@@ -67,7 +74,6 @@
 
 .nav-link {
     transition-delay: calc(.1s * var(--i));
-
 }
 
 .nav-link:hover {
@@ -80,8 +86,11 @@
 .jumbotron {
     background-image: url(img/bg.jpg) !important;
     background-size: cover;
-    height: 720px;
+    height: 790px;
+    border-radius: 0 0 30px 30px;
+    border-image: fill 0 linear-gradient(rgba(255, 255, 255, 0), #04001f);
 }
+
 
 .container img {
     block-size: 150px;
@@ -91,7 +100,13 @@
     border-style: solid;
     border-color: rgb(155, 154, 154);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    /* filter: blur(5px); */
 }
+
+.container img:hover {
+    filter: blur(5px);
+}
+
 
 .container {
     text-align: center;
@@ -119,7 +134,7 @@
 }
 
 .display-4 span {
-    color: rgb(126, 181, 150);
+    color: rgb(181, 71, 71);
 
 }
 
@@ -129,23 +144,23 @@
     margin-top: 30px;
 }
 
-p {
-    color: burlywood;
+.container p {
+    color: rgb(75, 43, 2);
 }
 
 .d-flex .p-2 {
     margin: auto;
-    margin-top: -100px;
+    margin-top: -120px;
     background-color: rgba(255, 255, 255, 0);
     height: 60px;
     width: 60px;
     border-radius: 50%;
     /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border-radius: 0px 0px 30px 30px; */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px 0px 30px 30px; */
     border: 1px solid rgba(255, 255, 255, .2);
-    box-shadow: 0 3px 15px rgba(255, 255, 255, .2);
+    box-shadow: 0 3px 15px rgba(13, 13, 13, 0.6);
 }
 
 .d-flex .p-2:hover {
@@ -158,17 +173,167 @@ border-radius: 0px 0px 30px 30px; */
     margin-top: 30%;
 }
 
+.jumbotronAbout {
+    /* background-image: url(img/bg.2.jpg) !important; */
+    background-size: cover;
+    background-color: #04001f;
+    height: 720px;
+    margin-top: -17px;
+    display: grid;
+    justify-content: center;
+    border-image: fill 0 linear-gradient(rgba(255, 255, 255, 0), #080808);
+}
+
+.containerAbout {
+    height: 80px;
+    width: 300px;
+}
+
+.containerAbout h1 {
+    font-family: bebas neue;
+    font-size: 170px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 0px 45px rgba(0, 0, 0, 0.3);
+    margin-left: -20px;
+}
 
 
-/* DEKTOP VERSION */
+.cardContainer {
+    height: 500px;
+    margin-top: -10px;
+    border-radius: 50px;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.cardContainer {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex: 11 calc(33.333%-1rem);
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    margin: auto;
+    margin-top: 90px;
+    width: 250px;
+    height: 150px;
+    border-radius: 40px;
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgb(1, 0, 21), #04001f);
+    border: rgb(3, 3, 3);
+    /* border-image: fill 0 linear-gradient(rgba(255, 255, 255, 0), #04001f); */
+    overflow: hidden;
+}
+
+.card:not(:first-child) {
+    margin-top: -35%;
+    width: 250px;
+    height: 150px;
+
+}
+
+.card:not(:first-child):hover {
+    margin-top: -40%;
+}
+
+.card:hover {
+    transform: translateY(-70px);
+    width: 250px;
+    height: 400px;
+    transition: all .5s;
+
+}
+
+.card:hover~.card {
+    bottom: -50px;
+}
+
+.content {
+    display: grid;
+    justify-content: center;
+    margin: auto;
+}
+
+.content img {
+    position: relative;
+    block-size: 250px;
+    margin-top: -150px;
+    border-radius: 30px;
+    z-index: -1;
+    filter: opacity(.5);
+}
+
+.content h4 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    padding-top: 10px;
+}
+
+.content p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    filter: opacity(.0);
+}
+
+.content p:hover {
+    filter: opacity(.5);
+    transition: 1s;
+}
+
+.content img:hover {
+    transition: 1s;
+}
+
+.containerFooter {
+    height: 80px;
+    margin-top: -10px;
+    border-radius: 50px;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* DEKSTOP VERSION */
 @media (min-width: 992px) {
     .navbar-brand {
-        padding-left: 100px;
+        padding-left: 10px;
         font-size: 35px;
+        margin: 0;
+        margin-left: 100px;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .container-fluid .container {
+        background: none;
+        box-shadow: none;
+        border: none;
+        height: 0;
+        margin-left: 50px;
+        margin-right: 20px;
+        margin-top: -60px;
+        width: fit-content;
     }
 
     .offcanvas {
-        margin-right: 90px;
+        margin-right: 80px;
+        margin-top: -40px;
+    }
+
+    .navbar-nav {
+        margin-right: 50px;
     }
 
     .nav-link:hover::after {
@@ -189,7 +354,7 @@ border-radius: 0px 0px 30px 30px; */
         background: none;
     }
 
-    .container img {
+    .jumbotron .container img {
         margin-left: 950px;
         margin-top: 250px;
         block-size: 300px;
@@ -219,6 +384,16 @@ border-radius: 0px 0px 30px 30px; */
 
     .d-flex .p-2 {
         margin: 0%;
-        margin-left: 110px;
         margin-top: -180px;
+        margin-left: 110px;
     }
+
+    .containerAbout {
+        height: 100px;
+        width: 1300px;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+}
