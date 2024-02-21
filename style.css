@@ -181,7 +181,7 @@
     margin-top: -17px;
     display: grid;
     justify-content: center;
-    border-image: fill 0 linear-gradient(rgba(255, 255, 255, 0), #080808);
+    border-image: fill 10 linear-gradient(rgba(255, 255, 255, 0), rgba(190, 135, 246, 0.3), rgba(255, 255, 255, .1));
 }
 
 .containerAbout {
@@ -193,67 +193,101 @@
     font-family: bebas neue;
     font-size: 170px;
     font-weight: lighter;
-    color: rgba(255, 255, 255, 0.1);
-    text-shadow: 0 0px 45px rgba(0, 0, 0, 0.3);
-    margin-left: -20px;
+    color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 0px 50px rgba(255, 255, 255, 0.1);
+    margin-left: 0px;
 }
 
 
 .cardContainer {
-    height: 500px;
+    height: 530px;
     margin-top: -10px;
-    border-radius: 50px;
     box-shadow: 0 0px 10px rgba(255, 255, 255, 0.1);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0), );
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border: #ffffff;
+    border-radius: 30px;
+    padding: 20px;
+    overflow: hidden;
 }
 
-.cardContainer {
+
+.carousel-inner {
+    border-radius: 10px;
+    justify-content: space-between;
+    height: 400px !important;
+    padding-bottom: 30px;
+    overflow: visible;
+}
+
+.carousel-inner img {
+    height: 330px;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.carousel-indicators button {
+    border-radius: 50%;
+    width: 5px !important;
+    height: 5px !important;
+}
+
+.carousel-item h5 {
+    color: aliceblue;
+}
+
+.btn {
+    padding: 0;
+    margin-left: 10px;
+}
+
+.likes {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    flex: 11 calc(33.333%-1rem);
-    overflow: hidden;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    background-color: ;
 }
 
-.card {
+.likes p {
+    color: rgb(249, 252, 254);
+    font-size: small;
+    margin-left: 2px;
+    margin-top: -1px;
+
+}
+
+.likes h5 {
+    font-size: smaller;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.carousel-caption {
+    height: 60px;
     position: relative;
-    margin: auto;
-    margin-top: 90px;
-    width: 250px;
-    height: 150px;
-    border-radius: 40px;
-    box-shadow: 0 0px 20px rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(11px);
-    -webkit-backdrop-filter: blur(10px);
-    background: linear-gradient(180deg, rgb(1, 0, 21), #04001f);
-    border: rgb(3, 3, 3);
-    /* border-image: fill 0 linear-gradient(rgba(255, 255, 255, 0), #04001f); */
+    margin-top: 10px;
     overflow: hidden;
+    width: 280px;
+    justify-content: start;
+    padding-left: 10px;
+    text-align: left;
+    padding-top: 0;
+    transition: all .7s;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: #ffffff;
+    border-radius: 10px;
+    left: 20px;
 }
 
-.card:not(:first-child) {
-    margin-top: -35%;
-    width: 250px;
-    height: 150px;
-
-}
-
-.card:not(:first-child):hover {
-    margin-top: -40%;
-}
-
-.card:hover {
-    transform: translateY(-70px);
-    width: 250px;
-    height: 400px;
-    transition: all .5s;
-
-}
-
-.card:hover~.card {
-    bottom: -50px;
+.carousel-caption p {
+    font-size: small;
 }
 
 .content {
@@ -262,46 +296,47 @@
     margin: auto;
 }
 
-.content img {
-    position: relative;
-    block-size: 250px;
-    margin-top: -150px;
-    border-radius: 30px;
-    z-index: -1;
-    filter: opacity(.5);
-}
-
-.content h4 {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+.carousel-caption:hover {
+    height: fit-content;
     padding-top: 10px;
-}
+    transform: translateY(-180px);
 
-.content p {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
-    filter: opacity(.0);
-}
-
-.content p:hover {
-    filter: opacity(.5);
-    transition: 1s;
-}
-
-.content img:hover {
-    transition: 1s;
 }
 
 .containerFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 80px;
+    width: 280px;
     margin-top: -10px;
-    border-radius: 50px;
-    box-shadow: 0 0px 10px rgba(255, 255, 255, 0.1);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    margin-left: 40px;
+    gap: 5px;
+}
+
+.containerFooter img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+
+}
+
+.containerFooter .comment {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    border: #ffffff;
+    border-radius: 10px;
+    width: 200px;
+    height: 70px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.comment p {
+    font-size: 12px;
+    color: #ffffff8b;
 }
 
 
@@ -396,4 +431,17 @@
         padding-left: 20px;
     }
 
-}
+    .cardContainer {
+        display: flex;
+        /* flex-wrap: nowrap; */
+        flex: 11 calc(33.333%-1rem);
+        overflow: hidden;
+
+        .card {
+            position: relative;
+            margin: auto;
+            width: 350px;
+            height: 350px;
+        }
+
+    }
