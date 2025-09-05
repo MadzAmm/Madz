@@ -41,7 +41,7 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body id="home">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
@@ -78,7 +78,7 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item" style="--i: 1">
-                <a class="nav-link" aria-current="page" href="#"
+                <a class="nav-link" aria-current="page" href="#home"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"
@@ -93,7 +93,7 @@
                 >
               </li>
               <li class="nav-item" style="--i: 2">
-                <a class="nav-link" href="#"
+                <a class="nav-link" href="#about"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"
@@ -109,7 +109,7 @@
                 >
               </li>
               <li class="nav-item" style="--i: 3">
-                <a class="nav-link" href="#"
+                <a class="nav-link" href="#galery"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"
@@ -121,11 +121,11 @@
                       d="M21 8c-.202 0-4.85.029-9 2.008C7.85 8.029 3.202 8 3 8a1 1 0 0 0-1 1v9.883a1 1 0 0 0 .305.719c.195.188.48.305.729.28l.127-.001c.683 0 4.296.098 8.416 2.025.016.008.034.005.05.011.119.049.244.083.373.083s.254-.034.374-.083c.016-.006.034-.003.05-.011 4.12-1.928 7.733-2.025 8.416-2.025l.127.001c.238.025.533-.092.729-.28.194-.189.304-.449.304-.719V9a1 1 0 0 0-1-1zM4 10.049c1.485.111 4.381.48 7 1.692v7.742c-3-1.175-5.59-1.494-7-1.576v-7.858zm16 7.858c-1.41.082-4 .401-7 1.576v-7.742c2.619-1.212 5.515-1.581 7-1.692v7.858z"
                     ></path>
                     <circle cx="12" cy="5" r="3"></circle></svg
-                  >Sertif</a
+                  >Galery</a
                 >
               </li>
-              <li class="nav-item" style="--i: 4">
-                <a class="nav-link" href="#"
+              <!-- <li class="nav-item" style="--i: 4">
+                <a class="nav-link" href="#contact"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"
@@ -139,9 +139,9 @@
                     <path d="M7 9h10v2H7zm0 4h5v2H7z"></path></svg
                   >Project</a
                 >
-              </li>
+              </li> -->
               <li class="nav-item" style="--i: 5">
-                <a class="nav-link" href="#"
+                <a class="nav-link" href="#contact"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="27"
@@ -205,133 +205,143 @@
     <!-- social End-->
 
     <!-- About -->
-    <div class="jumbotronAbout jumbotron-fluid">
-      <div class="containerAbout">
-        <div class="row text-center">
-          <div class="col">
-            <h1>ABOUT</h1>
-          </div>
-        </div>
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="row carousel-inner">
-            <div class="carousel-item active col-md-4">
-              <div class="cardContainer">
-                <h5 class="ms-2">University</h5>
-                <img src="img/uin.jpg" class="d-block w-100" alt="..." />
-                <div class="containerFooter">
-                  <img src="img/uinlg.jpg" alt="" />
-                  <div class="comment">
-                    <h5 class="name">UIN Syarif Hidayatullah</h5>
-                    <p>Ciputat-Tangerang Selatan</p>
-                  </div>
-                </div>
-                <div class="carousel-caption">
-                  <button></button>
-                  <p>
-                    A graduate of the Aqidah and Islamic Philosophy program with
-                    strong expertise in logic, critical analysis, and deep
-                    reflective thinking on both theoretical and practical
-                    issues. The academic background in Islamic philosophy has
-                    provided comprehensive skills in problem analysis,
-                    systematic argumentation, and rational decision-making.
-                    Well-trained in research, academic writing, and information
-                    management that require accuracy and consistency. These
-                    competencies strongly support administrative skills,
-                    particularly in data management, report preparation, and
-                    coordination tasks that demand precision and analytical
-                    rigor.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item col-md-4">
-              <div class="cardContainer">
-                <h5 class="ms-2">Islamic Senior High School</h5>
-                <img src="img/Man.png" class="d-block w-100" alt="..." />
-                <div class="containerFooter">
-                  <img src="img/manlg.png" alt="" />
-                  <div class="comment">
-                    <h5 class="name">MAN 2 Kab. Cirebon</h5>
-                    <p>Babakan-Ciwaringin-Cirebon</p>
-                  </div>
-                </div>
-                <div class="carousel-caption">
-                  <button></button>
-                  <p>
-                    A graduate of Madrasah Aliyah Negeri majoring in Mathematics
-                    and Natural Sciences (MIPA), equipped with strong
-                    analytical, detail-oriented, and structured skills. The
-                    academic background in MIPA supports proficiency in
-                    processing both numerical and textual data, logical
-                    thinking, and completing tasks systematically. Highly
-                    interested and competent in administrative work,
-                    particularly in document management, report preparation, and
-                    the use of office applications to enhance work efficiency.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item col-md-4">
-              <div class="cardContainer">
-                <h5 class="ms-2">Me</h5>
-                <img src="img/PS 1.png" class="d-block w-100" alt="..." />
-                <div class="containerFooter">
-                  <img src="img/mu.png" alt="" />
-                  <div class="comment">
-                    <h5 class="name">muhafasy</h5>
-                    <p>Cantigi-Indramayu</p>
-                  </div>
-                </div>
-                <div class="carousel-caption">
-                  <button></button>
-                  <p>
-                    I am a structured, detail-oriented, and disciplined
-                    professional, ensuring that every administrative process
-                    runs smoothly and accurately. With effective communication
-                    skills, a quick response to tasks, and proficiency in office
-                    technologies, I consistently enhance the efficiency of data
-                    management and report preparation. I am also creative in
-                    finding solutions and streamlining workflows, making
-                    administrative tasks not only completed on time but also
-                    more practical and value-adding. As a proactive, reliable,
-                    and collaborative individual, I am committed to supporting
-                    the overall performance of both the team and
-                    the organization.
-                  </p>
-                </div>
-              </div>
+    <section id="about">
+      <div class="jumbotronAbout jumbotron-fluid">
+        <div class="containerAbout">
+          <div class="row text-center">
+            <div class="col">
+              <h1>ABOUT</h1>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
+          <div
+            id="carouselExampleAutoplaying"
+            class="carousel slide"
+            data-bs-ride="carousel"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+            <div class="row carousel-inner">
+              <div class="carousel-item active col-md-4">
+                <div class="cardContainer">
+                  <h5 class="ms-2">University</h5>
+                  <img src="img/uin.jpg" class="d-block w-100" alt="..." />
+                  <div class="containerFooter">
+                    <img src="img/uinlg.jpg" alt="" />
+                    <div class="comment">
+                      <h5 class="name">UIN Syarif Hidayatullah</h5>
+                      <p>Ciputat-Tangerang Selatan</p>
+                    </div>
+                  </div>
+                  <div class="carousel-caption">
+                    <button></button>
+                    <p>
+                      A graduate of the Aqidah and Islamic Philosophy program
+                      with strong expertise in logic, critical analysis, and
+                      deep reflective thinking on both theoretical and practical
+                      issues. The academic background in Islamic philosophy has
+                      provided comprehensive skills in problem analysis,
+                      systematic argumentation, and rational decision-making.
+                      Well-trained in research, academic writing, and
+                      information management that require accuracy and
+                      consistency. These competencies strongly support
+                      administrative skills, particularly in data management,
+                      report preparation, and coordination tasks that demand
+                      precision and analytical rigor.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-md-4">
+                <div class="cardContainer">
+                  <h5 class="ms-2">Islamic Senior High School</h5>
+                  <img src="img/Man.png" class="d-block w-100" alt="..." />
+                  <div class="containerFooter">
+                    <img src="img/manlg.png" alt="" />
+                    <div class="comment">
+                      <h5 class="name">MAN 2 Kab. Cirebon</h5>
+                      <p>Babakan-Ciwaringin-Cirebon</p>
+                    </div>
+                  </div>
+                  <div class="carousel-caption">
+                    <button></button>
+                    <p>
+                      A graduate of Madrasah Aliyah Negeri majoring in
+                      Mathematics and Natural Sciences (MIPA), equipped with
+                      strong analytical, detail-oriented, and structured skills.
+                      The academic background in MIPA supports proficiency in
+                      processing both numerical and textual data, logical
+                      thinking, and completing tasks systematically. Highly
+                      interested and competent in administrative work,
+                      particularly in document management, report preparation,
+                      and the use of office applications to enhance
+                      work efficiency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item col-md-4">
+                <div class="cardContainer">
+                  <h5 class="ms-2">Me</h5>
+                  <img src="img/PS 1.png" class="d-block w-100" alt="..." />
+                  <div class="containerFooter">
+                    <img src="img/mu.png" alt="" />
+                    <div class="comment">
+                      <h5 class="name">muhafasy</h5>
+                      <p>Cantigi-Indramayu</p>
+                    </div>
+                  </div>
+                  <div class="carousel-caption">
+                    <button></button>
+                    <p>
+                      I am a structured, detail-oriented, and disciplined
+                      professional, ensuring that every administrative process
+                      runs smoothly and accurately. With effective communication
+                      skills, a quick response to tasks, and proficiency in
+                      office technologies, I consistently enhance the efficiency
+                      of data management and report preparation. I am also
+                      creative in finding solutions and streamlining workflows,
+                      making administrative tasks not only completed on time but
+                      also more practical and value-adding. As a proactive,
+                      reliable, and collaborative individual, I am committed to
+                      supporting the overall performance of both the team and
+                      the organization.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div
+            id="carouselExampleAutoplaying "
+            class="carousel slide"
+            data-bs-ride="carousel"
+          ></div>
         </div>
-        <div
-          id="carouselExampleAutoplaying "
-          class="carousel slide"
-          data-bs-ride="carousel"
-        ></div>
       </div>
-    </div>
+    </section>
+
     <!-- About End -->
 
     <!-- Galery -->
@@ -487,19 +497,126 @@
 
     <!-- Contact -->
     <section id="contact">
-      <div class="container">
+      <div class="containerContact">
         <div class="row">
-          <div class="col">
-            <h1>CONTACT</h1>
+          <div class="col text-center">
+            <h1>Contact <span>Me</span></h1>
+          </div>
+        </div>
+        <div class="row mt-4 justify-content-center">
+          <div class="col-md-8">
+            <div
+              class="alert alert-success alert-dismissible fade show d-none my-alert"
+              role="alert"
+            >
+              <strong>Terima kasih!</strong> pesan sudah terkirim...yey!
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form name="pesan-masuk">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  aria-describedby="name"
+                  name="nama"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  aria-describedby="email"
+                  name="email"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea
+                  class="form-control"
+                  id="pesan"
+                  rows="3"
+                  name="pesan"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-kirim">
+                Kirim
+              </button>
+              <button
+                class="btn btn-primary btn-loading d-none"
+                type="button"
+                disabled
+              >
+                <span
+                  class="spinner-border spinner-border-sm"
+                  aria-hidden="true"
+                ></span>
+                <span role="status">Loading...</span>
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </section>
     <!-- Contact End -->
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <p>
+        Created by
+        <a
+          href="https://www.instagram.com/muhafasy?igsh=MWVoYnpoMXJjZXNtNA%3D%3D&utm_source=qr"
+          >Muhammad</a
+        >
+      </p>
+    </footer>
+    <!-- Foote End -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbz4tzFNvfFHZ1lVlG4ZQn3jczk4X-yiysm6mz2kEGQVZNgJ7uKDq5-2m0xaEvuYuGCB/exec";
+      const form = document.forms["pesan-masuk"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        <!-- ketika tombol submmit diklik -->
+        <!-- tampilkan tombol loading, hilangkan tombol kirim -->
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            <!-- tampilkan tombol kirim, hilangkan tombol loading -->
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+
+            <!-- tampilkan tombol alert -->
+            myAlert.classList.toggle("d-none");
+
+            <!-- Reset Form -->
+            form.reset();
+
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>

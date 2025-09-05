@@ -27,10 +27,8 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-  padding: auto;
-  margin-right: 10px;
-  margin-left: 50px;
   margin-top: -20px;
+  margin-right: 15px;
 }
 
 .offcanvas {
@@ -41,7 +39,7 @@
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 30px;
+  border-radius: 30px 0 0 30px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
   width: 220px !important;
@@ -188,7 +186,6 @@
   /* background-image: url(img/bg.2.jpg) !important; */
   background-size: cover;
   background-color: #04001f;
-  height: 720px;
   margin-top: -17px;
   display: grid;
   justify-content: center;
@@ -203,20 +200,20 @@
 .containerAbout {
   text-align: center;
   justify-items: center;
+  padding-bottom: 200px;
 }
 
 .containerAbout h1 {
+  margin-top: 120px;
   font-family: bebas neue;
   font-size: 170px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.2);
   text-shadow: 0 0px 50px rgba(255, 255, 255, 0.1);
-  margin-left: -20px;
 }
 .cardContainer {
-  height: 550px;
+  height: 510px;
   width: 360px;
-  margin-top: -100px;
   box-shadow: 0 0px 10px rgba(255, 255, 255, 0.1);
   background: linear-gradient(
     135deg,
@@ -225,7 +222,7 @@
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
   padding: 20px;
 }
@@ -253,6 +250,7 @@
 
 .carousel-item h5 {
   color: aliceblue;
+  margin-top: -15px;
 }
 
 .btn {
@@ -284,7 +282,7 @@
 }
 
 .carousel-caption {
-  height: 75px;
+  height: 50px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -304,7 +302,7 @@
   ); */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   left: 20px;
 }
@@ -392,33 +390,25 @@
 
 .jumbotronSertif {
   /* background-image: url(img/bg.2.jpg) !important; */
-  background-size: contain;
-  background-color: #04001f;
-  height: 720px;
-  margin-top: -17px;
-  display: grid;
-  justify-content: center;
-  border-image: fill 10
-    linear-gradient(
+  /* background-size: contain; */
+  /* background-color: #04001f; */
+  /* height: 720px; */
+  /* margin-top: -17px; */
+  /* display: grid; */
+  /* justify-content: center; */
+  /* border-image: fill 10 */
+  /* linear-gradient(
       rgba(255, 255, 255, 0.1),
       rgba(190, 135, 246, 0.3),
       rgb(232, 90, 90)
-    );
+    ); */
 }
 
 .containerSertif {
-  text-align: center;
-  justify-items: center;
+  /* text-align: center; */
+  /* justify-items: center; */
 }
 
-.containerSertif h1 {
-  font-family: bebas neue;
-  font-size: 170px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.2);
-  text-shadow: 0 0px 50px rgba(255, 255, 255, 0.1);
-  margin-left: -20px;
-}
 .card {
   background: linear-gradient(
     180deg,
@@ -427,38 +417,114 @@
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: #ffffff;
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-inline: 20px;
+  box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.1);
 }
 
+.row {
+  margin-top: -90px;
+}
 .jumbotronGalery {
   background-size: contain;
   background-color: #04001f;
-  margin-top: -17px;
   justify-content: center;
-  border-image: fill 10
+  border-image: fill 0
     linear-gradient(rgb(232, 90, 90), rgba(190, 135, 246, 0.3), rgb(10, 10, 10));
 }
 
 #galery {
   background-image: url(img/bg.jpg) !important;
   background-size: cover;
-  height: 2000px;
   border-image: fill 0
-    linear-gradient(#04001f, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+    linear-gradient(#140b30, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
 }
 .containerGalery h1 {
+  margin-top: 50px;
   font-family: bebas neue;
   font-size: 170px;
   font-weight: lighter;
   color: rgba(255, 255, 255, 0.2);
   text-shadow: 0 0px 50px rgba(255, 255, 255, 0.1);
-  margin-left: -20px;
 }
 
 .card img {
   padding: 8px;
   border-radius: 15px 15px 15px 15px;
+}
+#contact {
+  margin-top: 90px;
+  background-color: rgb(202, 205, 209);
+  padding-inline: 20px;
+}
+.containerContact h1 {
+  font-family: bebas neue;
+  font-size: 30px;
+  color: rgb(215, 85, 5);
+  margin-top: 20px;
+}
+.containerContact h1 span {
+  font-family: bebas neue;
+  font-size: 30px;
+  font-weight: lighter;
+  color: rgb(96, 92, 169);
+  text-shadow: 0 0px 50px rgba(255, 255, 255, 0.1);
+
+  margin-top: 20px;
+}
+
+form {
+  font-family: poppins;
+  font-weight: 500;
+}
+.form-label {
+  color: azure;
+  text-shadow: 0 0 10px rgb(12, 12, 12, 0.5);
+}
+.form-control {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.1);
+}
+.form-control:hover {
+  transform: translateY(-5px);
+}
+
+.btn {
+  width: 150px;
+  height: 40px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.09),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.1);
+}
+.footer {
+  background-color: rgb(202, 205, 209);
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+.footer p {
+  font-family: poppins;
+  font-weight: bold;
+  color: rgb(215, 85, 5);
+}
+
+.footer p a {
+  color: rgb(96, 92, 169);
 }
 
 /* DEKSTOP VERSION */
