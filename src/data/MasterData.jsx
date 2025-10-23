@@ -1,0 +1,295 @@
+// src/data/masterData.js
+
+export const MasterData = [
+  // --- Item Asli dari Portfolio ---
+  {
+    id: 1,
+    title: 'Accounting, Tax & Audit',
+    category: ['learning', 'credentials'],
+    year: 2024,
+    imageUrl: '/audit.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'MySkill/Online Course',
+    company: 'P.T. Linimuda Inspirasi Negeri',
+    heroImage: '/audit.avif', // Banner besar
+    detailImage1: '/audit.avif', // Di dalam frame putih
+    detailImage2: '/mw2.avif', // Di samping tipografi
+    tagline: 'PEACE IN <br /> SIMPLICITY',
+    descriptionTitle: 'Calm & Collected, <br /> Digital Serenity.',
+    descriptionBody:
+      'Membangun pengalaman digital yang tenang dan intuitif, memadukan estetika minimalis dengan fungsionalitas yang mulus untuk Damai Group.',
+  },
+  {
+    id: 2,
+    title: 'Lulusan Terbaik Program Studi',
+    category: ['learning', 'credentials'],
+    year: 2024,
+    imageUrl: '/best.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'Jakarta/Tangerang Selatan',
+    company: 'UIN Syarif Hidayatullah',
+    heroImage: '/best.avif',
+    detailImage1: '/best.avif',
+    detailImage2: '/kampus.avif',
+    tagline: 'WEAVING THE <br /> FUTURE',
+    descriptionTitle: 'Interwoven Worlds, <br /> Seamless Experience.',
+    descriptionBody:
+      'Menyusun platform e-commerce yang kompleks dengan fokus pada pengalaman pengguna yang kaya dan arsitektur yang skalabel.',
+  },
+  {
+    id: 3,
+    title: 'React Router Dom App',
+    category: ['development', 'design'],
+    year: 2023,
+    imageUrl: '/r2d.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/r2d.avif',
+    detailImage1: '/r2d.avif',
+    detailImage2: '/mjas.avif',
+    tagline: 'FOUNDATION <br /> FOR GROWTH',
+    descriptionTitle: 'Solid Architecture, <br /> Fluid Design.',
+    descriptionBody:
+      'Mengembangkan design system yang kuat dan arsitektur backend untuk Base Creative guna meningkatkan skala operasi mereka.',
+  },
+  {
+    id: 4,
+    title: 'Graduation-themed Artwork',
+    category: ['design'],
+    year: 2024,
+    imageUrl: '/mugis.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'Yogyakarta',
+    company: 'Personal Project',
+    heroImage: '/mugis.avif',
+    detailImage1: '/mugis.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'REWARDS <br /> REIMAGINED',
+    descriptionTitle: 'Joyful Interactions, <br /> Lasting Loyalty.',
+    descriptionBody:
+      'Merancang UI/UX yang menyenangkan untuk aplikasi reward dan loyalitas, berfokus pada keterlibatan dan retensi pengguna.',
+  },
+  {
+    id: 5,
+    title: 'Puzzle Feed',
+    category: ['design'],
+    year: 2023,
+    imageUrl: '/h.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/h.avif',
+    detailImage1: '/h.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'CRAFTING <br /> THE CANVAS',
+    descriptionTitle: 'Where Art <br /> Meets Interface.',
+    descriptionBody:
+      'Desain web konseptual untuk studio desain multidisiplin kelas atas, menekankan tipografi yang berani dan interaksi mikro.',
+  },
+  {
+    id: 6,
+    title: 'Seamless Carousel',
+    category: ['design'],
+    year: 2023,
+    imageUrl: '/u.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/u.avif',
+    detailImage1: '/u.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'PRESERVING <br /> THE PAST',
+    descriptionTitle: 'Digital History, <br /> Instantly Accessible.',
+    descriptionBody:
+      'Membangun sistem arsip digital berkinerja tinggi, memungkinkan pengguna mencari dan mengambil dokumen serta media bersejarah.',
+  },
+  {
+    id: 7,
+    title: 'Bootstrap-Based Web App',
+    category: ['development'],
+    year: 2024,
+    imageUrl: '/web.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/web.avif',
+    detailImage1: '/web.avif',
+    detailImage2: '/mjas.avif',
+    tagline: 'LEARN <br /> BY DOING',
+    descriptionTitle: 'Mastering React, <br /> One Hook at a Time.',
+    descriptionBody:
+      'Proyek pembelajaran pribadi: membuat platform kursus interaktif skala penuh yang dibangun sepenuhnya di React, lengkap dengan manajemen state dan animasi.',
+  },
+  {
+    id: 8,
+    title: 'Double Exposure Potrait',
+    category: ['design'],
+    year: 2023,
+    imageUrl: '/dbx.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Bogor',
+    company: 'Seventure',
+    heroImage: '/dbx.avif',
+    detailImage1: '/dbx.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'LEADING <br /> THE CHARGE',
+    descriptionTitle: 'Building Teams, <br /> Shipping Products.',
+    descriptionBody:
+      'Peran saya sebagai Lead Developer, berfokus pada pembinaan tim, perancangan sistem yang skalabel, dan mengawasi siklus hidup produk.',
+  },
+  {
+    id: 9,
+    title: 'National Seminar on Human Philosophy',
+    category: ['achievements'],
+    year: 2023,
+    imageUrl: '/fil.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'International',
+    company: 'WebAwards',
+    heroImage: '/fil.avif',
+    detailImage1: '/fil.avif',
+    detailImage2: '/mjaket.avif',
+    tagline: 'RECOGNITION <br /> OF CRAFT',
+    descriptionTitle: 'Honored for <br /> Design Excellence.',
+    descriptionBody:
+      'Dianugerahi "Best User Experience" untuk proyek FABRIC™, sebagai pengakuan atas desain intuitif dan kinerja teknis.',
+  },
+  {
+    id: 10,
+    title: 'Seventure 24 KKN Certification',
+    category: ['credentials'],
+    year: 2025,
+    imageUrl: '/kkn.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Online',
+    company: 'Amazon Web Services',
+    heroImage: '/kkn.avif ',
+    detailImage1: '/kkn.avif',
+    detailImage2: '/mbw.avif',
+    tagline: 'CLOUD <br /> CERTIFIED',
+    descriptionTitle: 'Building for <br /> The Modern Cloud.',
+    descriptionBody:
+      'Mencapai sertifikasi AWS Certified Developer - Associate, memvalidasi keahlian teknis dalam mengembangkan dan memelihara aplikasi di AWS.',
+  },
+  {
+    id: 11,
+    title: 'Soft Cinematic Cover Art',
+    category: ['design'],
+    year: 2024,
+    imageUrl: '/bunga.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Online',
+    company: 'VueMasters',
+    heroImage: '/bunga.avif',
+    detailImage1: '/bunga.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'EXPANDING <br /> THE STACK',
+    descriptionTitle: 'Beyond React, <br /> Into Vue.',
+    descriptionBody:
+      'Menyelesaikan workshop lanjutan tentang Vue.js 3, berfokus pada Composition API, manajemen state Pinia, dan pola tingkat enterprise.',
+  },
+
+  // --- Item Asli dari Activity (ID baru & flag isActivity: true) ---
+  {
+    id: 12,
+    title: 'Islamic Event Poster Design',
+    category: ['Design'],
+    year: 2025,
+    imageUrl: '/adha.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Nurul Iman',
+    heroImage: '/adha.avif',
+    detailImage1: '/adha.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'STATE OF <br /> THE ART',
+    descriptionTitle: 'Beyond setState, <br /> Global Sanity.',
+    descriptionBody:
+      'Sebuah artikel mendalam yang membedah pola manajemen state modern di React, dari Context API hingga Zustand dan Jotai.',
+  },
+  {
+    id: 13,
+    title: 'Islamic Educational Emblem Design',
+    category: ['design'],
+    year: 2025,
+    imageUrl: '/logo1.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Indramyu',
+    company: 'Personal Project',
+    heroImage: '/logo1.avif',
+    detailImage1: '/logo1.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'SHARING <br /> KNOWLEDGE',
+    descriptionTitle: 'The Future of <br /> Interactive Web.',
+    descriptionBody:
+      'Menyampaikan keynote tentang "Animating the Web with Framer Motion and React," membahas kinerja dan animasi deklaratif.',
+  },
+  {
+    id: 14,
+    title: 'Flat Vector Illustration',
+    category: ['design'],
+    year: 2024,
+    imageUrl: '/m.avif',
+    isActivity: true,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/m.avif',
+    detailImage1: '/m.avif',
+    detailImage2: '/mjas.avif',
+    tagline: 'OPEN <br /> SOURCE',
+    descriptionTitle: 'Giving Back <br /> To Community.',
+    descriptionBody:
+      'Berkontribusi pada library Framer Motion dengan memperbaiki bug kinerja terkait path morphing SVG dan meningkatkan dokumentasi.',
+  },
+  {
+    id: 15,
+    title: 'Real-life Frame Series',
+    category: ['design'],
+    year: 2024,
+    imageUrl: '/child.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Bogor',
+    company: 'Personal Project',
+    heroImage: '/child.avif',
+    detailImage1: '/child.avif',
+    detailImage2: '/mjaket.avif',
+    tagline: 'EAT YOUR <br /> OWN FOOD',
+    descriptionTitle: 'This Very <br /> Website.',
+    descriptionBody:
+      'Merancang dan mengembangkan portofolio pribadi saya (situs yang sedang Anda lihat) sebagai tempat bereksperimen untuk teknik React dan Framer Motion tingkat lanjut.',
+  },
+  {
+    id: 16,
+    title: 'Flat Vector Illustration',
+    category: ['design'],
+    year: 2023,
+    imageUrl: '/moe.avif',
+    isActivity: false,
+    // --- Data Detail ---
+    place: 'Jakarta',
+    company: 'Personal Project',
+    heroImage: '/moe.avif',
+    detailImage1: '/moe.avif',
+    detailImage2: '/mw2.avif',
+    tagline: 'LIFTING <br /> OTHERS',
+    descriptionTitle: 'Growing Together, <br /> Building a Stronger Web.',
+    descriptionBody:
+      'Secara aktif membimbing 5+ developer junior melalui tinjauan kode, saran karier, dan sesi pairing teknis.',
+  },
+];

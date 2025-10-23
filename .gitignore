@@ -22,3 +22,12 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Folder library (sangat besar)
+/node_modules
+
+# Folder hasil build (dibuat oleh hosting)
+/build
+
+# File environment rahasia
+.env

@@ -1,0 +1,57 @@
+.pageWrapper {
+  left: -3px;
+}
+
+.coaching-container {
+  // Wajib agar z-index berfungsi
+  position: relative;
+  // Angkat ke lapisan atas (angka tinggi)
+  z-index: 20;
+  // Beri warna latar belakang agar tidak transparan
+  background-color: #fff7ed;
+}
+
+.parallax-wrapper {
+  // Tarik wrapper ini ke atas sejauh tinggi satu layar penuh,
+  // sehingga ia berada tepat di belakang .coaching-container
+  margin-top: -15vh;
+
+  // Wajib agar z-index berfungsi
+  position: relative;
+  // Letakkan di lapisan bawah
+  z-index: 10;
+}
+
+.value {
+  z-index: 10;
+  @media (max-width: 768px) {
+    margin-bottom: -10vh;
+  }
+}
+
+.bridge {
+  background: #fff7ed;
+  margin-top: -31vh;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  @media (max-width: 900px) {
+  }
+  @media (max-width: 768px) {
+    height: 5vh;
+  }
+}
+
+.tech {
+  @media (max-width: 900px) {
+  }
+  @media (max-width: 768px) {
+    margin-top: 300px;
+  }
+}
+
+.list {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: -100px;
+  padding-top: 20vh;
+  color: white;
+}

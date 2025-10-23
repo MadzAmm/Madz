@@ -1,0 +1,16 @@
+// Import semua gaya dari ProjectPage.scss
+// Sesuaikan path-nya jika perlu.
+@import './ProjectPage.scss';
+
+// --- Override Khusus untuk Halaman "About" ---
+
+.about-page-container {
+  // Karena kita menghapus <CustomCursor />,
+  // kita perlu mengembalikan kursor default browser.
+  cursor: default;
+}
+
+// Tidak perlu styling lain!
+// Semua kelas seperti .project-intro, .parallax-section,
+// dan .typography-section-reworked sudah otomatis
+// mendapatkan gayanya dari file ProjectPage.scss yang di-impor.

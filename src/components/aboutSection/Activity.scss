@@ -1,0 +1,345 @@
+/* --- SCSS Variables --- */
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  'Helvetica Neue', Arial, sans-serif;
+$primary-bg: #fff7ed;
+$primary-text: #002f45;
+$secondary-text: #888;
+$border-color: #c7c5c5;
+$active-bg: #002f45;
+$active-text: #fff;
+$anim-ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+/* --- Main Container & Header --- */
+.activity-container {
+  font-family: $font-family;
+  background-color: $primary-bg;
+  color: $primary-text;
+  min-height: 100vh;
+  margin-top: -32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modified Header for Activity Page */
+.activity-header {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  flex-shrink: 0;
+  z-index: 100;
+  padding: 120px 20px 40px 20px;
+  text-align: center;
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  .header-main-text {
+    flex: 2; /* Takes up more space */
+    text-align: start;
+
+    span {
+      color: #ff4d4d;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 550;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin: 0 auto 1rem auto;
+      max-width: 80%;
+    }
+    .header-subtitle {
+      font-size: 1.1rem;
+      color: $secondary-text;
+      max-width: 550px;
+      margin: 0 6.5vw;
+      line-height: 1.6;
+    }
+  }
+
+  .header-side-text {
+    flex: 1; /* Takes up less space */
+    text-align: center;
+    p {
+      font-size: 1rem;
+      color: $secondary-text;
+      line-height: 1.7;
+      max-width: 300px;
+
+      span {
+        color: #002f45;
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .header-content {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .header-main-text h1 {
+      font-size: 3rem;
+      max-width: 100%;
+    }
+    .header-side-text {
+      text-align: center;
+      p {
+        max-width: 500px;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    padding-top: 100px;
+    .header-main-text h1 {
+      font-size: 2.5rem;
+    }
+    .header-main-text .header-subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* --- Content Area --- */
+.content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  margin-top: -10px;
+  box-sizing: border-box;
+}
+
+/* --- List View Styles --- */
+.list-view-wrapper {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.list-view {
+  position: relative;
+  max-width: 1150px;
+  min-height: 50vh;
+  margin: 0 auto;
+}
+.list-item-activity {
+  position: sticky;
+  top: 15vh;
+  padding: 2rem 1.5rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid $border-color;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  margin-top: -5px;
+  cursor: pointer;
+  will-change: transform, opacity;
+  position: relative;
+  overflow: hidden;
+
+  .list-item-number,
+  .list-item-year {
+    font-size: 1rem;
+    color: $secondary-text;
+    z-index: 2;
+  }
+  .list-item-number {
+    font-weight: 500;
+    text-align: left;
+  }
+  .list-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+  }
+  .list-item-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0;
+    color: $primary-text;
+  }
+  .list-item-category {
+    font-size: 1rem;
+    color: $secondary-text;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+  }
+  .list-item-year {
+    text-align: right;
+  }
+}
+
+/* --- Hover Teaser Image Styles --- */
+.teaser-image {
+  position: fixed;
+  z-index: 9999;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  translate: -50% -50%;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  /* PERUBAHAN: Menyesuaikan ukuran untuk mobile */
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.teaser-view-button {
+  position: absolute;
+  z-index: 10;
+  bottom: 1rem;
+  right: 1rem;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- New "More Activity" Button Styles --- */
+.more-activity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0 0 0;
+  position: relative;
+  z-index: 10;
+}
+.more-activity-btn {
+  border-radius: 40px;
+  border: 1px solid $border-color;
+  background-color: $primary-bg;
+  color: $primary-text;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.2s ease-in-out;
+  padding: 1.2rem 2.5rem;
+
+  // PENTING: Tambahkan properti ini ke class .info-button yang sudah ada
+  position: relative; // Agar elemen ::before dan background-fill bisa diposisikan
+  overflow: hidden; // Agar clip-path berfungsi dengan benar
+  display: inline-flex; // Atau block, sesuaikan dengan layout Anda
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  // Pastikan transisi warna teks juga ada
+  transition: color 0.4s ease-in-out;
+
+  &:hover {
+    color: #ffffff; // Warna teks saat di-hover (misalnya hitam/gelap)
+  }
+
+  .background-fill {
+    position: absolute;
+    inset: 0; // Mengisi seluruh area tombol
+    background-color: $active-bg; // Warna latar belakang saat di-hover (misalnya putih)
+    z-index: 1; // Berada di bawah teks
+  }
+
+  // Wrapper untuk teks/konten tombol
+  .label-text {
+    position: relative;
+    z-index: 2; // Pastikan teks selalu di atas
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.WaveContainer {
+  width: 100%;
+  height: 100px;
+  padding: 5rem 0;
+  position: relative;
+  margin-bottom: -20vh;
+  background-color: #fff7ed;
+  z-index: 5;
+}
+
+.WaveHelper {
+  width: 100%;
+  height: 100px;
+  margin-bottom: -20vh;
+  position: relative;
+  background-color: #fff7ed;
+}
+
+/* --- MARQUEE STYLES --- */
+.marquee-full-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+
+  span {
+    display: block;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 500;
+    line-height: 1;
+    color: $primary-text;
+    flex-shrink: 0;
+  }
+}

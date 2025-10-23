@@ -1,0 +1,484 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Syne:wght@500;700&display=swap');
+
+// Variabel
+:root {
+  --bg-light: #fff7ed;
+  --bg-dark: #111111;
+  --text-light: #eaeaea;
+  --text-dark: #1c1c1c;
+  --text-muted: #888888;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Syne', sans-serif;
+  --depth-opacity: 0.1;
+  --depth-size: 80px;
+}
+
+// Gaya Dasar
+.page-container {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  cursor: none;
+  margin-top: -32px;
+  margin-bottom: -32px;
+  // overflow-x: hidden; // HANYA X
+  // Pastikan tidak ada overflow-y: hidden/scroll/auto di parent manapun
+}
+
+// Kursor Kustom
+.custom-cursor {
+  position: fixed;
+  z-index: 9999;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 1024px) {
+    display: none; // Tetap nonaktif di tablet/mobile
+  }
+  .cursor-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+// Section Intro
+.project-intro {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15vh 6vw 10vh 6vw;
+  box-sizing: border-box;
+}
+.project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 12vw, 7.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0 0 8vh 0;
+}
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  div {
+    border-top: 1px solid #ddd;
+    padding: 0.8rem 2rem;
+  }
+  span {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  p {
+    margin: 0.4rem 0 0 0;
+    font-size: 15px;
+  }
+  @media (max-width: 600px) {
+    gap: 1rem;
+    div {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Mixin Efek Kedalaman
+@mixin inner-depth-effect {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(0, 0, 0, var(--depth-opacity)) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    );
+}
+
+// Section Parallax Penuh
+.parallax-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  .parallax-image-wrapper {
+    position: sticky; // Sticky untuk gambar ini saja
+    top: 0;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::after {
+      @include inner-depth-effect;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 0;
+    }
+  }
+}
+
+// Section Showcase
+.content-showcase-section {
+  padding: 10vh 5vw;
+  position: relative;
+  background-color: var(--bg-dark);
+  z-index: 3;
+  background-color: #333;
+}
+.showcase-frame {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dcdcdc;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 70vh;
+}
+.frame-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  padding-bottom: 15px;
+  color: #333;
+  .frame-logo {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .frame-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .frame-menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #333;
+    }
+  }
+}
+.frame-content {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  isolation: isolate;
+  @media (max-width: 992px) {
+    min-height: 40vh;
+  }
+
+  &::after {
+    @include inner-depth-effect;
+  }
+
+  .content-parallax-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    .content-parallax-image {
+      display: block;
+      width: 100%;
+      height: 110%;
+      top: -5%;
+      object-fit: contain;
+      position: absolute;
+    }
+  }
+}
+.frame-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding-top: 15px;
+  color: #333;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  .footer-partner {
+    font-size: 11px;
+    text-align: right;
+    @media (max-width: 600px) {
+      text-align: right;
+    }
+  }
+}
+
+// Container Tumpukan Section
+.stacked-sections-container {
+  position: relative; // WAJIB
+  // Tinggi harus selalu cukup untuk scroll sticky + elemen di atasnya
+  height: 220vh; // Tetapkan tinggi ini di SEMUA ukuran layar
+
+  // JANGAN atur height: auto di sini lagi
+  // @media (max-width: 992px) {
+  //   height: auto; // INI DIHAPUS
+  // }
+}
+
+// Section Tipografi (Sticky SELALU AKTIF)
+.typography-section-reworked {
+  // --- Konfigurasi Sticky Utama (Berlaku di SEMUA UKURAN) ---
+  height: 120vh; // Tinggi tetap > viewport
+  position: sticky; // SELALU STICKY
+  top: -15vh; // Tempel di atas container
+  z-index: 1; // Di bawah .next-project-section
+
+  // --------------------------------------------------------
+
+  // Gaya visual lainnya
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+
+  // --- Penyesuaian Layout Responsif (TANPA mengubah sticky) ---
+  @media (max-width: 992px) {
+    // HANYA ubah layout internal, BUKAN position/height/top
+    flex-direction: column;
+    text-align: center;
+    padding: 15vh 5vw; // Padding berbeda
+    // JANGAN override position, height, top di sini lagi
+    // position: relative; <-- DIHAPUS
+    // height: auto; <-- DIHAPUS
+    // min-height: 100vh; <-- DIHAPUS (tinggi 120vh tetap berlaku)
+    // top: auto; <-- DIHAPUS
+  }
+  // ------------------------------------------------------------
+  @media (max-width: 768px) {
+    height: 90vh;
+  }
+}
+
+// Section Proyek Berikutnya (Scrolling Over)
+.next-project-section {
+  position: relative; // Tetap relative
+  z-index: 2; // Tetap di atas typography
+  height: 100vh; // Tetap 100vh agar mengisi sisa
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5vw;
+  box-sizing: border-box;
+
+  // Penyesuaian tinggi di mobile (opsional, karena induknya sudah tinggi)
+  @media (max-width: 992px) {
+    // z-index tetap 2 agar jelas di atas sticky
+    // height bisa tetap 100vh atau disesuaikan jika perlu
+    // height: 80vh; // Bisa dikembalikan jika diinginkan lebih pendek
+  }
+  @media (max-width: 768px) {
+    height: 130vh;
+  }
+}
+
+// Konten Tipografi
+.typography-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 5vw;
+  z-index: 5;
+  @media (max-width: 992px) {
+    padding-right: 0;
+    align-items: center;
+    flex: none;
+    width: 100%;
+    order: 1;
+  }
+}
+.typography-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  max-width: 40%;
+  @media (max-width: 992px) {
+    flex: none;
+    max-width: 70%;
+    margin-bottom: 5vh;
+    width: 100%;
+    order: 0;
+  }
+  @media (max-width: 600px) {
+    max-width: 90%;
+  }
+}
+.typography-parallax-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  isolation: isolate;
+
+  &::after {
+    @include inner-depth-effect;
+  }
+
+  img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+.typography-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 2vh 0;
+}
+.typography-paragraph {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  max-width: 450px;
+  color: #444;
+  @media (max-width: 992px) {
+    max-width: 90%;
+  }
+}
+
+// Konten Proyek Berikutnya
+.next-project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.next-project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -5rem;
+  span {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 12vw, 7rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    margin-top: -30px;
+    margin-bottom: -70px;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 5rem;
+  }
+}
+.card-animation-wrapper {
+  width: 90vw;
+  max-width: 500px;
+  height: 160px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+.next-project-card-frame {
+  background-color: #e9e9e7;
+  padding: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid #dcdcdc;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  .card-frame-content {
+    background-color: #111;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
