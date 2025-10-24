@@ -268,7 +268,25 @@ $text-color-light: #ffffff;
   .navbar {
     width: 75%; // Gunakan hampir seluruh lebar layar
     left: 5%; // Posisikan di tengah
-    top: 2%;
+    top: 2.3%;
+  }
+
+  .style-selector-navbar .style-btn {
+    padding: 0 15px; // Kurangi padding agar teks tidak terpotong
+    min-width: 90px; // Kurangi lebar minimal tombol
+
+    .slot-text,
+    .slot-viewport::before {
+      font-size: 14px; // Perkecil sedikit ukuran font
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    width: 70%; // Gunakan hampir seluruh lebar layar
+    left: 5%; // Posisikan di tengah
+    top: 2.3%;
   }
 
   .style-selector-navbar .style-btn {

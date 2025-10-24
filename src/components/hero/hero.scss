@@ -37,6 +37,22 @@
       img {
         width: 40px;
       }
+
+      @media (max-width: 400px) {
+        margin-left: 3vh;
+        h3 {
+          font-size: 2.5rem;
+          margin-top: 24rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        margin-left: 4vh;
+        h3 {
+          font-size: 2.7rem;
+          margin-top: 24rem;
+        }
+      }
     }
   }
 
@@ -132,11 +148,6 @@
       margin-left: 5vw;
       gap: 1vh;
       z-index: 10;
-      h2 {
-        font-size: 1rem;
-        margin-top: 400px;
-      }
-
       img {
         width: 20px;
       }
