@@ -10,7 +10,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 
 /* Main container styling */
 .contact-section-container {
-  min-height: 100svh;
+  min-height: 100vh;
   background-color: $bg-color;
   color: $text-color;
   font-family: $font-family;
@@ -40,7 +40,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     width: 68px;
     height: 68px;
     border-radius: 50%;
-    margin-right: 1rem;
+    margin-right: 2rem;
     object-fit: cover;
     background-color: rgba(65, 65, 72, 0.559);
   }
@@ -76,7 +76,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 .contact-info-buttons {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 2rem;
   padding-top: 3vh;
 }
 
@@ -87,7 +87,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   padding: 1.5rem 1.5rem;
   font-size: 1.125rem; // 18px
   font-weight: 500;
-
+  width: 34vw;
   cursor: pointer;
 
   // PENTING: Tambahkan properti ini ke class .info-button yang sudah ada
@@ -194,14 +194,15 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   //   /* Header section with image and title */
   .header {
     gap: 10px;
-    padding: 0 0 2rem 1.5rem;
-    margin: 0 0 -3rem;
+    padding: 4rem 0 2rem 1.5rem;
+    margin: 0 0 -1rem;
 
     .profile-image {
       width: 15%;
       height: 15%;
       border-radius: 50%;
       object-fit: cover;
+      margin-right: 0.3rem;
     }
   }
   // .profile-image {
@@ -211,8 +212,6 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   .contact-info-buttons {
     display: flex;
     flex-direction: column;
-    margin-top: 4rem;
-    padding-top: 4rem;
     align-items: center;
     gap: 1rem;
   }
@@ -227,6 +226,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   .info-button {
     padding-inline: 4rem;
     text-align: center;
+    width: 90vw;
   }
 }
 
@@ -240,6 +240,19 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
       border-radius: 50%;
       object-fit: cover;
     }
+  }
+
+  .contact-info-buttons {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 1rem;
+  }
+  .info-button {
+    padding-inline: 4rem;
+    text-align: center;
+    width: 90vw;
   }
 }
 

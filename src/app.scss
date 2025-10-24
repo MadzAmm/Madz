@@ -6,7 +6,7 @@ html {
   overflow-x: clip;
 }
 body {
-  background-color: transparent;
+  background-color: #252529ff;
   color: #bcd4cc;
   margin-top: -32px;
 }
@@ -15,12 +15,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'DM Sans', sans-serif;
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-
-  /* Opsional tapi disarankan: untuk mode landscape (layar miring) */
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 }
 
 a {

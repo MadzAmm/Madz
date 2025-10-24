@@ -37,7 +37,7 @@ const Footer = () => {
           <p>2025 © Edition</p>
         </div>
 
-        <div className='footer__section'>
+        <div className='footer__section_time'>
           <h4>LOCAL TIME</h4>
           <p>{localTime} GMT+7</p>
         </div>

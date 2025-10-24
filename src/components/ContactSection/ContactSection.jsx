@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import './ContactSection.scss';
 import Magnetic from '.././DateBubble/Magnetic';
 import Velocity from '../velocity/Velocity';
@@ -83,8 +83,14 @@ const ContactSection = () => {
     offset: ['start end', 'start start'],
   });
 
-  const yHeader = useTransform(scrollYProgress, [0, 1], ['-30vw', '0vw']);
-  const xContact = useTransform(scrollYProgress, [0, 1], ['30vw', '0vw']);
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 200, // Kekakuan (semakin tinggi, semakin kaku)
+    damping: 50, // Redaman (semakin tinggi, semakin 'mulus' tapi ada delay)
+    restDelta: 0.001,
+  });
+
+  const yHeader = useTransform(smoothScroll, [0, 1], ['-30vw', '0vw']);
+  const xContact = useTransform(smoothScroll, [0, 1], ['30vw', '0vw']);
 
   return (
     <div

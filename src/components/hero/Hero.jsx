@@ -75,7 +75,7 @@
 // export default Hero;
 
 import './hero.scss';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 
 // ... (variants dan sliderVariants tetap sama)
@@ -107,12 +107,22 @@ const Hero = () => {
     offset: ['start start', 'end start'],
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']);
-  const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const smoothScroll = useSpring(scrollYProgress, {
+    stiffness: 200, // Kekakuan (semakin tinggi, semakin kaku)
+    damping: 50, // Redaman (semakin tinggi, semakin 'mulus' tapi ada delay)
+    restDelta: 0.001,
+  });
 
-  // 1. TAMBAHKAN TRANSFORMASI BARU UNTUK SLIDING TEXT
-  // Kita buat bergerak ke atas ('-200%') saat halaman scroll ke bawah
-  const ySlidingText = useTransform(scrollYProgress, [0, 1], ['0%', '-200%']);
+  // Ganti 'scrollYProgress' dengan 'smoothScroll'
+  const yText = useTransform(smoothScroll, [0, 1], ['0%', '-10%']);
+  const yImage = useTransform(smoothScroll, [0, 1], ['0%', '20%']);
+  const ySlidingText = useTransform(smoothScroll, [0, 1], ['0%', '-200%']);
+  // const yText = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']);
+  // const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+
+  // // 1. TAMBAHKAN TRANSFORMASI BARU UNTUK SLIDING TEXT
+  // // Kita buat bergerak ke atas ('-200%') saat halaman scroll ke bawah
+  // const ySlidingText = useTransform(scrollYProgress, [0, 1], ['0%', '-200%']);
 
   return (
     <motion.div

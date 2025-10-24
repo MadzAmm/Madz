@@ -1,7 +1,7 @@
 .pageWrapper {
   position: relative;
   width: 100vw;
-  min-height: 100svh;
+  min-height: 100vh;
   margin-left: -30px;
 
   .dateBubbleLayer {
@@ -24,13 +24,13 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100svh;
+    height: 100vh;
     z-index: 0;
     pointer-events: none;
     will-change: transform;
   }
   .parallax-container {
-    margin-top: -100svh;
+    margin-top: -100vh;
     z-index: 1;
   }
   .contentLayer {
