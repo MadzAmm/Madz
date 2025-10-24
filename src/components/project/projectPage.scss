@@ -125,7 +125,7 @@
 
 // Section Parallax Penuh
 .parallax-section {
-  height: 100vh;
+  height: 100svh;
   position: relative;
   overflow: hidden;
   .parallax-image-wrapper {
@@ -309,7 +309,7 @@
 .next-project-section {
   position: relative; // Tetap relative
   z-index: 2; // Tetap di atas typography
-  height: 100vh; // Tetap 100vh agar mengisi sisa
+  height: 100svh; // Tetap 100vh agar mengisi sisa
   background-color: var(--bg-dark);
   color: var(--text-light);
   display: flex;

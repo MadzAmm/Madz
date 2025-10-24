@@ -15,7 +15,7 @@ $reduced-gap: 5px;
   font-family: $font-family;
   background-color: $primary-bg;
   color: $primary-text;
-  min-height: 100vh;
+  min-height: 100svh;
   margin-top: -32px;
   &.slide-mode-active,
   &.list-mode-active,
@@ -824,7 +824,7 @@ $reduced-gap: 5px;
 .list-view {
   position: relative;
   max-width: 1150px;
-  min-height: 100vh;
+  min-height: 100svh;
   margin: 0 auto;
 }
 .list-item {
