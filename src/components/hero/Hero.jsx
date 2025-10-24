@@ -108,7 +108,7 @@ const Hero = () => {
   });
 
   const yText = useTransform(scrollYProgress, [0, 1], ['0%', '-10%']);
-  const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const yImage = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
 
   // 1. TAMBAHKAN TRANSFORMASI BARU UNTUK SLIDING TEXT
   // Kita buat bergerak ke atas ('-200%') saat halaman scroll ke bawah

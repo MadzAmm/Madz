@@ -74,7 +74,7 @@ const ContactSection = () => {
     },
   };
 
-  const profileImage = 'mw2.avif'; // Placeholder gambar profil
+  const profileImage = 'm10.png'; // Placeholder gambar profil
 
   const ref = useRef(null);
 
@@ -83,8 +83,8 @@ const ContactSection = () => {
     offset: ['start end', 'start start'],
   });
 
-  const yHeader = useTransform(scrollYProgress, [0, 1], ['-40vw', '0vw']);
-  const xContact = useTransform(scrollYProgress, [0, 1], ['50vw', '0vw']);
+  const yHeader = useTransform(scrollYProgress, [0, 1], ['-30vw', '0vw']);
+  const xContact = useTransform(scrollYProgress, [0, 1], ['30vw', '0vw']);
 
   return (
     <div
