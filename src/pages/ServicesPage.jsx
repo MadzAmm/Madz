@@ -1,10 +1,50 @@
 import { useScroll } from 'framer-motion';
-import { useRef, React } from 'react';
+import { useRef, React, useState, useEffect } from 'react';
 import PageTransition from './PageTransition';
 import DateBubble from '../components/DateBubble/DateBubble';
 import LiquidGlass from '../components/LiquidGlass/LiquidGlass';
 import ProjectPage from '../components/project/ProjectPage';
 import { useNavigate } from 'react-router-dom';
+
+/**
+ * Hook kustom untuk mengecek media query secara dinamis.
+ * @param {string} query - String media query (mis: '(max-width: 768px)')
+ * @returns {boolean} - True jika query cocok, false jika tidak.
+ */
+function useMediaQuery(query) {
+  // 1. Dapatkan nilai awal saat komponen dimuat
+  const [matches, setMatches] = useState(
+    () => window.matchMedia(query).matches
+  );
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(query);
+
+    // 2. Buat fungsi listener untuk update state saat layar berubah
+    const handleChange = (event) => {
+      setMatches(event.matches);
+    };
+
+    // 3. Daftarkan listener
+    // 'addEventListener' adalah cara baru, 'addListener' adalah fallback
+    if (mediaQueryList.addEventListener) {
+      mediaQueryList.addEventListener('change', handleChange);
+    } else {
+      mediaQueryList.addListener(handleChange);
+    }
+
+    // 4. Bersihkan listener saat komponen di-unmount
+    return () => {
+      if (mediaQueryList.removeEventListener) {
+        mediaQueryList.removeEventListener('change', handleChange);
+      } else {
+        mediaQueryList.removeListener(handleChange);
+      }
+    };
+  }, [query]); // Efek ini akan dijalankan ulang jika string query berubah
+
+  return matches;
+}
 
 const sectionStyle = {
   width: '100%',
@@ -30,6 +70,8 @@ export default function ServicesPage() {
 
   // 2. Perbaiki sintaks useRef. 'pageWrapper' akan menjadi container mouse
   const pageWrapperRef = useRef(null);
+
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   // Objek konfigurasi Anda (tidak perlu diubah)
   const landingPageWaveConfig = {
@@ -79,47 +121,49 @@ export default function ServicesPage() {
           ]}
           position={{ top: '35%', left: '2rem' }}
         />
-        {/* 3. Pindahkan LiquidGlass keluar dari ParallaxScroller agar menjadi overlay */}
-        <LiquidGlass
-          mouseContainer={pageWrapperRef} // Lacak mouse di seluruh 'pageWrapper'
-          elasticity={0.5} //1
-          mode={'prominent'} //"standard" | "polar" | "prominent" | "shader"
-          displacementScale={20} //200
-          blurAmount={0} // 1
-          saturation={100} //300%
-          aberrationIntensity={10} //20
-          cornerRadius={50}
-          overLight={false}
-          onClick={() => navigate('/Portfolio')}
-          style={{
-            position: 'fixed',
-            boxSizing: 'border-box',
 
-            bottom: '0',
-            left: '50%',
-            top: '80%',
-            // Untuk memusatkan elemen dengan tepat
-            zIndex: 10, // Pastikan berada di atas konten lain
-          }}>
-          <div
-            className='p-6'
-            style={{ textAlign: 'center' }}>
-            <h1
-              style={{
-                // Format: clamp(ukuran_minimal, ukuran_ideal, ukuran_maksimal)
-                fontSize: 'clamp(0.6rem, 1rem + 4vw, 2.6rem)',
-              }}>
-              All Project
-            </h1>
-            <p
-              style={{
-                fontSize: 'clamp(0.8rem, 0.7rem + 2vw, 1rem)',
-                maxWidth: '400px',
-              }}>
-              Driving growth and engagement through data-driven strategies.
-            </p>
-          </div>
-        </LiquidGlass>
+        {/* 3. BUAT RENDER BERSYARAT
+          Ini artinya: "HANYA render LiquidGlass jika 'isMobile' bernilai 'false'"
+        */}
+        {!isMobile && (
+          <LiquidGlass
+            mouseContainer={pageWrapperRef}
+            elasticity={0.5}
+            mode={'prominent'}
+            displacementScale={20}
+            blurAmount={0}
+            saturation={100}
+            aberrationIntensity={10}
+            cornerRadius={50}
+            overLight={false}
+            onClick={() => navigate('/Portfolio')}
+            style={{
+              position: 'fixed',
+              boxSizing: 'border-box',
+              bottom: '0',
+              left: '50%',
+              top: '80%',
+              zIndex: 10,
+            }}>
+            <div
+              className='p-6'
+              style={{ textAlign: 'center' }}>
+              <h1
+                style={{
+                  fontSize: 'clamp(0.6rem, 1rem + 4vw, 2.6rem)',
+                }}>
+                All Project
+              </h1>
+              <p
+                style={{
+                  fontSize: 'clamp(0.8rem, 0.7rem + 2vw, 1rem)',
+                  maxWidth: '400px',
+                }}>
+                Driving growth and engagement through data-driven strategies.
+              </p>
+            </div>
+          </LiquidGlass>
+        )}
         <ProjectPage />
       </div>
     </PageTransition>

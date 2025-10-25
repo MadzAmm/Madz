@@ -56,21 +56,9 @@ const Footer = () => {
                 <AnimateInteractiveText
                   as='a'
                   initialColor='#fff7ed'
-                  href='#'>
-                  Facebook
-                </AnimateInteractiveText>
-              </motion.li>
-            </Magnetic>
-            <Magnetic
-              pullForceParent={0.5}
-              pullForceChild={0.25}>
-              <motion.li
-                whileHover={{ color: 'white', scale: 1.1 }}
-                whileTap={{ scale: 0.85 }}>
-                <AnimateInteractiveText
-                  as='a'
-                  initialColor='#fff7ed'
-                  href='#'>
+                  href='https://www.instagram.com/muhafasy'
+                  target='_blank' // 2. Buka di tab baru
+                  rel='noopener noreferrer'>
                   Instagram
                 </AnimateInteractiveText>
               </motion.li>
@@ -84,8 +72,10 @@ const Footer = () => {
                 <AnimateInteractiveText
                   as='a'
                   initialColor='#fff7ed'
-                  href='#'>
-                  Twitter
+                  href='https://github.com/MadzAmm/' // 1. Link bersih
+                  target='_blank' // 2. Buka di tab baru
+                  rel='noopener noreferrer'>
+                  Github
                 </AnimateInteractiveText>
               </motion.li>
             </Magnetic>
@@ -98,8 +88,26 @@ const Footer = () => {
                 <AnimateInteractiveText
                   as='a'
                   initialColor='#fff7ed'
-                  href='#'>
+                  href='https://www.threads.com/@muhafasy'
+                  target='_blank' // 2. Buka di tab baru
+                  rel='noopener noreferrer'>
                   Threads
+                </AnimateInteractiveText>
+              </motion.li>
+            </Magnetic>
+            <Magnetic
+              pullForceParent={0.5}
+              pullForceChild={0.25}>
+              <motion.li
+                whileHover={{ color: 'white', scale: 1.1 }}
+                whileTap={{ scale: 0.85 }}>
+                <AnimateInteractiveText
+                  as='a'
+                  initialColor='#fff7ed'
+                  href='https://www.linkedin.com/in/madz-am-664983394'
+                  target='_blank' // 2. Buka di tab baru
+                  rel='noopener noreferrer'>
+                  LinkedIn
                 </AnimateInteractiveText>
               </motion.li>
             </Magnetic>

@@ -104,6 +104,9 @@ const ContactSection = () => {
           <motion.img
             src={profileImage}
             alt='Profile'
+            onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+            onDragStart={(e) => e.preventDefault()} // Mencegah drag
+            draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
             className='profile-image'
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

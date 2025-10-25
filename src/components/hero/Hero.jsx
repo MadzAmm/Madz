@@ -156,6 +156,9 @@ const Hero = () => {
             variants={itemVariants}
             src='/mad.png'
             alt='mad'
+            onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+            onDragStart={(e) => e.preventDefault()} // Mencegah drag
+            draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
           />
         </motion.div>
       </div>

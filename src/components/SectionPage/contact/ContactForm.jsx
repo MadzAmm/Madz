@@ -49,10 +49,10 @@ const businessDetails = {
   location: 'Location: Jakarta Selatan',
 };
 const socialLinks = [
-  { name: 'Facebook', url: '#' },
-  { name: 'Instagram', url: '#' },
-  { name: 'Twitter', url: '#' },
-  { name: 'Threads', url: '#' },
+  { name: 'Instagram', url: 'https://www.instagram.com/muhafasy' },
+  { name: 'Github', url: 'https://github.com/MadzAmm/' },
+  { name: 'Threads', url: 'https://www.threads.com/@muhafasy' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/madz-am-664983394' },
 ];
 
 // --- KOMPONEN KECIL ---
@@ -249,26 +249,25 @@ const styles = {
     minHeight: '100svh',
     width: '100vw',
     marginLeft: '-32px',
-    marginTop: '-32px',
   },
   header: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    margin: '3rem 0 4rem 3rem',
+    margin: '5rem 0 4rem 3rem',
   },
 
   footer: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottom: '1px solid #4f4c4cff',
+    borderBottom: '1px solid #4b5563',
     height: '15vh',
     paddingTop: '2.5rem',
     marginBottom: '1rem',
   },
   title: {
-    fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+    fontSize: 'clamp(2.5rem, 8vw, 4rem)',
     margin: 0,
     lineHeight: 1.1,
     fontWeight: 500,
@@ -295,7 +294,6 @@ const styles = {
     flexDirection: 'column',
     gap: '2.5rem',
     paddingTop: '0.5rem',
-
     alignItems: 'center',
   },
   sidebarContent: {
@@ -308,14 +306,13 @@ const styles = {
   },
 
   sidebarImage: {
-    width: '80px',
-    height: '80px',
+    width: '90px',
+    height: '90px',
     borderRadius: '50%',
-    backgroundImage: 'url("mad.png")',
+    backgroundImage: 'url("m10.png")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    marginBottom: '-0.5rem',
-    backgroundColor: '#414148ff',
+    marginBottom: '-0.7rem',
   },
 
   sidebarContact: {
@@ -326,7 +323,7 @@ const styles = {
   fieldContainer: {
     display: 'flex',
     gap: '2rem',
-    borderBottom: '1px solid #444',
+    borderBottom: '1px solid #4b5563',
     padding: '2rem 0',
   },
   fieldNumber: { color: '#888', fontSize: '0.8rem', paddingTop: '0.5rem' },

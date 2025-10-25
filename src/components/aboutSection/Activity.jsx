@@ -14,6 +14,7 @@ import Magnetic from '../DateBubble/Magnetic';
 import Wave from '../MorphingWave/Wave';
 import { ButtonReveal } from '../buttonReveal/ButtonReveal';
 import { MasterData } from '../../data/MasterData';
+import { AnimateInteractiveText } from '../AnimatedText/AnimateInteractiveText ';
 
 // --- CONFIG & DATA ---
 const listWaveConfig = {
@@ -363,17 +364,23 @@ const Activity = () => {
             <h1>
               Still <span>learning,</span> always <span>creating.</span>
             </h1>
-            <p className='header-subtitle'>
+            <AnimateInteractiveText
+              as='p'
+              initialColor='#888'
+              hoverColor='#888'
+              className='header-subtitle'>
               I believe growth never ends-every creation is another way to
               learn.
-            </p>
+            </AnimateInteractiveText>
           </div>
           <div className='header-side-text'>
-            <p>
+            <AnimateInteractiveText
+              as='p'
+              initialColor='#888'
+              hoverColor='#888'>
               This page highlights my journey and the continuous effort to
-              <span> learn, build, and share knowledge</span> within the
-              community.
-            </p>
+              learn, build, and share knowledge within the --community
+            </AnimateInteractiveText>
           </div>
         </motion.div>
       </motion.header>
@@ -383,7 +390,7 @@ const Activity = () => {
         <div className='main-content-wrapper'>
           <motion.div
             key='list'
-            className='list-view-wrapper'>
+            className='list-view-wrapper-activity'>
             <div
               className='list-view'
               style={{ zIndex: '9999' }}>

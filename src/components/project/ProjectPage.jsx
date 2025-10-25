@@ -89,6 +89,9 @@ const ContentParallaxImage = ({
         src={src}
         alt={alt}
         style={{ y }}
+        onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+        onDragStart={(e) => e.preventDefault()} // Mencegah drag
+        draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
         className='content-parallax-image'
       />
     </div>
@@ -249,6 +252,9 @@ const ProjectPage = () => {
             src={project.heroImage} // <-- DINAMIS
             alt={project.title} // <-- DINAMIS
             style={{ y: fullParallaxY, scale: 1.15 }}
+            onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+            onDragStart={(e) => e.preventDefault()} // Mencegah drag
+            draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
           />
         </div>
       </section>
@@ -314,6 +320,9 @@ const ProjectPage = () => {
                 src={project.detailImage2} // <-- DINAMIS
                 alt={`${project.title} mood`} // <-- DINAMIS
                 style={{ y: typographyImageY }}
+                onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+                onDragStart={(e) => e.preventDefault()} // Mencegah drag
+                draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
               />
             </div>
           </div>
@@ -345,6 +354,9 @@ const ProjectPage = () => {
                     <img
                       src={nextProject.imageUrl} // <-- DINAMIS (Gunakan imageUrl list)
                       alt={`${nextProject.title} Preview`} // <-- DINAMIS
+                      onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+                      onDragStart={(e) => e.preventDefault()} // Mencegah drag
+                      draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
                     />
                   </div>
                 </motion.div>

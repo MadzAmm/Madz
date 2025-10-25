@@ -143,10 +143,13 @@ const Velocity = () => {
                 <span
                   key={j}
                   style={{
-                    fontFamily: 'lufga',
+                    textTransform: 'uppercase',
+                    fontFamily: 'Champion-HTF-Bantamweight, sans-serif ',
+                    fontSize: '5rem',
+                    color: '#bfbebe13',
                     paddingRight: '100px',
                   }}>
-                  -The goal is not merely to find the 'right' answer, but more
+                  The goal is not merely to find the 'right' answer, but more
                   importantly, to ask the 'right' questions.
                 </span>
               ))}

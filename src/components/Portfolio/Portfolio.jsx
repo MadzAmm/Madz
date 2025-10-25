@@ -549,6 +549,9 @@ const GridItem = ({
           alt={project.title}
           whileHover={!isTouchDevice ? { scale: 1.05 } : {}}
           transition={{ duration: 0.4 }}
+          onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
+          onDragStart={(e) => e.preventDefault()} // Mencegah drag
+          draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
         />{' '}
       </div>{' '}
       <AnimatePresence>
@@ -1601,7 +1604,7 @@ const Portfolio = () => {
                                 <img
                                   src={project.imageUrl}
                                   alt={project.title}
-                                  draggable='false'
+                                  // draggable='false'
                                 />{' '}
                               </div>{' '}
                               <div className='slide-item-info'>
@@ -1666,7 +1669,7 @@ const Portfolio = () => {
                                 <img
                                   src={project.imageUrl}
                                   alt={project.title}
-                                  draggable='false'
+                                  // draggable='false'
                                 />{' '}
                               </div>{' '}
                               <div className='slide-item-info'>
@@ -1719,7 +1722,7 @@ const Portfolio = () => {
                             <img
                               src={project.imageUrl}
                               alt={project.title}
-                              draggable='false'
+                              // draggable='false'
                             />{' '}
                           </div>{' '}
                           <div className='slide-item-info'>
@@ -1756,7 +1759,7 @@ const Portfolio = () => {
                             <img
                               src={project.imageUrl}
                               alt={project.title}
-                              draggable='false'
+                              // draggable='false'
                             />{' '}
                           </div>{' '}
                           <div className='slide-item-info'>

@@ -8,6 +8,7 @@ export const AnimateInteractiveText = ({
   // --- PROPS BARU UNTUK WARNA ---
   initialColor = '#033b54', // Warna default saat teks terlihat
   hoverColor = 'cadetblue', // Warna default saat di-hover
+  ...rest
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.5 });
@@ -49,7 +50,8 @@ export const AnimateInteractiveText = ({
   return (
     <Tag
       ref={ref}
-      className={className}>
+      className={className}
+      {...rest}>
       <motion.span
         style={{
           display: 'inline-block',
