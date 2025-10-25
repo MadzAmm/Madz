@@ -159,6 +159,13 @@ const Hero = () => {
             onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
             onDragStart={(e) => e.preventDefault()} // Mencegah drag
             draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
+            style={{
+              WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+              KhtmlUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              userSelect: 'none',
+            }}
           />
         </motion.div>
       </div>

@@ -26,22 +26,12 @@
 }
 
 // Kursor Kustom
-.custom-cursor {
-  position: fixed;
-  z-index: 9999;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @media (max-width: 1024px) {
+.snakeCursor {
+  @media (max-width: 900px) {
     display: none; // Tetap nonaktif di tablet/mobile
   }
-  .cursor-text {
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
+  @media (max-width: 760px) {
+    display: none; // Tetap nonaktif di tablet/mobile
   }
 }
 
@@ -441,7 +431,7 @@
   }
 }
 .card-animation-wrapper {
-  width: 90vw;
+  width: 85vw;
   max-width: 500px;
   height: 160px;
   border-radius: 15px;
@@ -460,14 +450,15 @@
   }
 }
 .next-project-card-frame {
-  background-color: #e9e9e7;
-  padding: 10px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 30px 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-  border: 1px solid #dcdcdc;
+  border: 1px solid #76747472;
   width: 100%;
-  height: 200px;
+  height: 300px;
   position: absolute;
-  top: 0;
+  top: -30px;
   left: 0;
   .card-frame-content {
     background-color: #111;

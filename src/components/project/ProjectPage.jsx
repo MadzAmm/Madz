@@ -4,36 +4,148 @@ import {
   useScroll,
   useTransform,
   AnimatePresence,
+  useSpring,
+  useMotionValue,
 } from 'framer-motion';
 import './ProjectPage.scss'; // Menggunakan SCSS
 
 // --- (1) IMPORT BARU ---
 import { useParams, useNavigate } from 'react-router-dom';
 import { MasterData } from '../../data/MasterData'; // <-- Sesuaikan path ke masterData
+import Magnetic from '../DateBubble/Magnetic';
 
 // ===================================================================
 // Kursor Kustom (Tidak ada perubahan)
 // ===================================================================
-const CustomCursor = ({ variant }) => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+// const CustomCursor = ({ variant }) => {
+//   const mouse = {
+//     x: useSpring(0, { damping: 25, stiffness: 300 }),
+//     y: useSpring(0, { damping: 25, stiffness: 300 }),
+//   };
+//   const scale = useSpring(0, { damping: 20, stiffness: 200 });
+
+//   useEffect(() => {
+//     const onMouseMove = (e) => {
+//       mouse.x.set(e.clientX);
+//       mouse.y.set(e.clientY);
+//     };
+//     window.addEventListener('mousemove', onMouseMove);
+//     return () => window.removeEventListener('mousemove', onMouseMove);
+//   }, []);
+
+//   // const variants = {
+//   //   default: {
+//   //     height: 25,
+//   //     width: 25,
+//   //     backgroundColor: 'white',
+//   //     mixBlendMode: 'difference',
+//   //     transition: { type: 'spring', stiffness: 500, damping: 28 },
+//   //   },
+//   //   hover: {
+//   //     height: 120,
+//   //     width: 120,
+//   //     backgroundColor: '#0041c2',
+//   //     mixBlendMode: 'normal',
+//   //     transition: { type: 'spring', stiffness: 400, damping: 25 },
+//   //   },
+//   // };
+
+//   return (
+//     <motion.div
+//       className='custom-cursor'
+//       variants={variant}
+//       animate={variant}
+//       style={{
+//         x: mouse.x,
+//         y: mouse.y,
+//         translateX: '-50%',
+//         translateY: '-50%',
+//       }}>
+//       <AnimatePresence>
+//         {variant === 'hover' && (
+//           <Magnetic>
+//             <motion.span
+//               className='cursor-text'
+//               initial={{ opacity: 0 }}
+//               animate={{ opacity: 1, transition: { delay: 0.1 } }}
+//               exit={{ opacity: 0 }}>
+//               Next
+//             </motion.span>
+//           </Magnetic>
+//         )}
+//       </AnimatePresence>
+//     </motion.div>
+//   );
+// };
+
+// --- TENTUKAN JUMLAH DAN GAYA EKOR ---
+const NUMBER_OF_DOTS = 10; // Jumlah lingkaran di ekor
+const SPRING_CONFIG = { stiffness: 400, damping: 25 }; // Kecepatan gerak
+
+const SnakeCursor = () => {
+  const [cursorVariant, setCursorVariant] = useState('default');
+
+  // Lacak posisi mouse
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
-    const onMouseMove = (e) => setMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', onMouseMove);
-    return () => window.removeEventListener('mousemove', onMouseMove);
-  }, []);
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
 
-  const variants = {
+    // Deteksi hover pada link atau tombol
+    const handleMouseOver = (e) => {
+      if (e.target.closest('a, .next-project-content')) {
+        setCursorVariant('hover');
+      }
+    };
+    const handleMouseOut = (e) => {
+      if (e.target.closest('a,  .next-project-content')) {
+        setCursorVariant('default');
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseover', handleMouseOver);
+    document.addEventListener('mouseout', handleMouseOut);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseover', handleMouseOver);
+      document.removeEventListener('mouseout', handleMouseOut);
+    };
+  }, [mouseX, mouseY]);
+
+  // Buat array 'dots'
+  // Setiap dot akan mengikuti mouse, tapi dengan lag yang berbeda
+  const dots = Array.from({ length: NUMBER_OF_DOTS }).map((_, i) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const springX = useSpring(mouseX, {
+      ...SPRING_CONFIG,
+      damping: SPRING_CONFIG.damping + i * 4, // Makin ke belakang makin lambat
+    });
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const springY = useSpring(mouseY, {
+      ...SPRING_CONFIG,
+      damping: SPRING_CONFIG.damping + i * 4,
+    });
+
+    return { x: springX, y: springY };
+  });
+
+  // Varian untuk setiap dot
+  const dotVariants = {
     default: {
-      height: 25,
-      width: 25,
+      scale: 1,
       backgroundColor: 'white',
       mixBlendMode: 'difference',
-      transition: { type: 'spring', stiffness: 500, damping: 28 },
     },
     hover: {
-      height: 120,
-      width: 120,
+      scale: 2, // Dot akan membesar saat hover
+      height: 50,
+      width: 50,
       backgroundColor: '#0041c2',
       mixBlendMode: 'normal',
       transition: { type: 'spring', stiffness: 400, damping: 25 },
@@ -41,26 +153,48 @@ const CustomCursor = ({ variant }) => {
   };
 
   return (
-    <motion.div
-      className='custom-cursor'
-      variants={variants}
-      animate={variant}
-      style={{ left: mousePosition.x, top: mousePosition.y }}>
-      <AnimatePresence>
-        {variant === 'hover' && (
-          <motion.span
-            className='cursor-text'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { delay: 0.1 } }}
-            exit={{ opacity: 0 }}>
-            Next
-          </motion.span>
-        )}
-      </AnimatePresence>
-    </motion.div>
+    <>
+      {dots.map((dot, index) => (
+        <motion.div
+          key={index}
+          className='snakeCursor'
+          variants={dotVariants}
+          animate={cursorVariant}
+          style={{
+            x: dot.x,
+            y: dot.y,
+            // --- INI KUNCI EFEKNYA ---
+            // 'scale' membuat ekornya mengecil ke belakang
+            scale: (NUMBER_OF_DOTS - index) / NUMBER_OF_DOTS,
+            // --- ---
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: 25,
+            height: 25,
+            borderRadius: '50%',
+            pointerEvents: 'none',
+            translateX: '-50%',
+            translateY: '-50%',
+            zIndex: 9999,
+            display: cursorVariant === 'hover' && index > 0 ? 'none' : 'flex', // Gunakan flex untuk menengahkan teks
+            alignItems: 'center', // Pusatkan teks secara vertikal
+            justifyContent: 'center', // Pusatkan teks secara horizontal
+            color: 'white', // Warna teks
+            fontSize: '8px', // Ukuran teks
+            fontWeight: '200', // Berat teks
+          }}
+          transition={{ type: 'spring', stiffness: 500, damping: 28 }}>
+          {cursorVariant === 'hover' && index === 0 && (
+            <Magnetic>
+              <span className='cursor-text'>Next</span>
+            </Magnetic>
+          )}
+        </motion.div>
+      ))}
+    </>
   );
 };
-
 // ===================================================================
 // Komponen Parallax Gambar (Tidak ada perubahan)
 // ===================================================================
@@ -88,7 +222,14 @@ const ContentParallaxImage = ({
       <motion.img
         src={src}
         alt={alt}
-        style={{ y }}
+        style={{
+          y,
+          WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+          KhtmlUserSelect: 'none',
+          MozUserSelect: 'none',
+          msUserSelect: 'none',
+          userSelect: 'none',
+        }}
         onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
         onDragStart={(e) => e.preventDefault()} // Mencegah drag
         draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
@@ -96,6 +237,15 @@ const ContentParallaxImage = ({
       />
     </div>
   );
+};
+
+const openVariants = {
+  open: { transition: { staggerChildren: 0.1 } },
+  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+};
+const itemVariants = {
+  open: { y: 0, opacity: 1 },
+  closed: { y: 200, opacity: 0 },
 };
 
 // ===================================================================
@@ -216,16 +366,19 @@ const ProjectPage = () => {
     <motion.div
       key={project.id} // <-- Tambahkan key di sini
       className='page-container'
-      initial={{ opacity: 0 }} // Animasi masuk halaman
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }} // Animasi keluar halaman
+      variants={openVariants}
+      initial='closed'
+      animate='open'
+      style={{ cursor: 'default' }}
       transition={{ duration: 0.5 }}>
-      <CustomCursor variant={cursorVariant} />
+      <SnakeCursor />
 
       {/* Bagian 1: Header Proyek (DINAMIS) */}
-      <section className='project-intro'>
-        <h1 className='project-title'>{project.title}</h1>
-        <div className='project-meta'>
+      <motion.section
+        className='project-intro'
+        variants={itemVariants}>
+        <motion.h1 className='project-title'>{project.title}</motion.h1>
+        <motion.div className='project-meta'>
           <div>
             <span>ROLE / SERVICES</span>
             <p>{project.category.join(' & ')}</p>
@@ -240,24 +393,33 @@ const ProjectPage = () => {
               {project.place} © {project.year}
             </p>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* Bagian 2: Gambar Parallax Pertama (DINAMIS) */}
-      <section
+      <motion.section
+        variants={itemVariants}
         ref={fullParallaxRef}
         className='parallax-section'>
         <div className='parallax-image-wrapper'>
           <motion.img
             src={project.heroImage} // <-- DINAMIS
             alt={project.title} // <-- DINAMIS
-            style={{ y: fullParallaxY, scale: 1.15 }}
+            style={{
+              y: fullParallaxY,
+              scale: 1.15,
+              WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+              KhtmlUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              userSelect: 'none',
+            }}
             onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
             onDragStart={(e) => e.preventDefault()} // Mencegah drag
             draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Bagian 3: Showcase Frame Putih (DINAMIS) */}
       <section className='content-showcase-section'>
@@ -319,7 +481,14 @@ const ProjectPage = () => {
               <motion.img
                 src={project.detailImage2} // <-- DINAMIS
                 alt={`${project.title} mood`} // <-- DINAMIS
-                style={{ y: typographyImageY }}
+                style={{
+                  y: typographyImageY,
+                  WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+                  KhtmlUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none',
+                  userSelect: 'none',
+                }}
                 onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
                 onDragStart={(e) => e.preventDefault()} // Mencegah drag
                 draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
@@ -357,6 +526,13 @@ const ProjectPage = () => {
                       onContextMenu={(e) => e.preventDefault()} // Mencegah klik kanan
                       onDragStart={(e) => e.preventDefault()} // Mencegah drag
                       draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
+                      style={{
+                        WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+                        KhtmlUserSelect: 'none',
+                        MozUserSelect: 'none',
+                        msUserSelect: 'none',
+                        userSelect: 'none',
+                      }}
                     />
                   </div>
                 </motion.div>

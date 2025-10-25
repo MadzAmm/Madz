@@ -310,6 +310,11 @@ const styles = {
     height: '90px',
     borderRadius: '50%',
     backgroundImage: 'url("m10.png")',
+    WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+    KhtmlUserSelect: 'none',
+    MozUserSelect: 'none',
+    msUserSelect: 'none',
+    userSelect: 'none',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     marginBottom: '-0.7rem',

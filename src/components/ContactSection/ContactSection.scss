@@ -76,7 +76,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 .contact-info-buttons {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1rem;
   padding-top: 3vh;
 }
 
@@ -87,7 +87,7 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
   padding: 1.5rem 1.5rem;
   font-size: 1.125rem; // 18px
   font-weight: 500;
-  width: 34vw;
+  width: 25vw;
   cursor: pointer;
 
   // PENTING: Tambahkan properti ini ke class .info-button yang sudah ada
@@ -135,8 +135,8 @@ $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 }
 
 .velocity {
-  margin-bottom: -8vh;
-  padding-top: 6vh;
+  margin-bottom: -4vh;
+  padding-top: 2vh;
 }
 // @media (max-width: 900px) {
 //   .contact-section-container {

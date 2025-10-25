@@ -108,6 +108,13 @@ const ContactSection = () => {
             onDragStart={(e) => e.preventDefault()} // Mencegah drag
             draggable='false' //mencegah drag di beberapa browser yang berbasis webkit (chrome, safari)
             className='profile-image'
+            style={{
+              WebkitTouchCallout: 'none', // <- Properti Kunci img untuk iOS
+              KhtmlUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              userSelect: 'none',
+            }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{

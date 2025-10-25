@@ -1,18 +1,23 @@
 import { useScroll } from 'framer-motion';
 import React, { useRef, lazy, Suspense } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PageTransition from './PageTransition';
 import DateBubble from '../components/DateBubble/DateBubble';
 import Portfolio from '../components/Portfolio/Portfolio';
 import ContactSection from '../components/ContactSection/ContactSection';
 import Wave from '../components/MorphingWave/Wave';
 import Footer from '../components/hero/footer/Footer';
+import useResponsiveBubble from '../components/DateBubble/UseResponsiveBubble';
 
 export default function PortfolioPage() {
   const ref = useRef(null);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end end'],
   });
+
+  const { position, motionConfig } = useResponsiveBubble('portfolio');
 
   const landingPageWaveConfig = {
     initialY: { desktop: 3100, tablet: -50, mobile: 0 },
@@ -64,38 +69,56 @@ export default function PortfolioPage() {
 
         <DateBubble
           mode='custom'
-          motionConfig={{
-            xInput: [0, 0.5, 1],
-            xOutput: [100, 0, -100],
-            yInput: [0, 0.5, 1],
-            yOutput: [240, 300, 380],
-            scaleInput: [0, 0.5, 1],
-            scaleOutput: [1, 1.5, 1],
-          }}
+          scrollYProgress={scrollYProgress}
+          navigate={navigate} //atur navigate di customStages dibawah
+          position={position} //atur di UseResponsive
+          motionConfig={motionConfig} //atur di UseResponsive
           customStages={[
             {
-              range: [0, 0.3],
-              text: 'Featured Work',
-              bg: 'rgba(0,0,0,0.3)',
+              range: [0, 0.1],
+              text: 'About',
+              bg: '#002f45', // Latar belakang hover 'About'
+              baseBg: '#ff4d4d', // Latar belakang dasar 'About'
               color: '#fff',
-              onClick: () => console.log('Featured Work clicked'),
+              onClick: () => navigate('/about'),
+              isHoverable: true,
             },
             {
-              range: [0.3, 0.6],
-              text: 'Design Showcase',
-              bg: 'rgba(32,42,68,0.6)',
-              color: '#eee',
-              onClick: () => console.log('Design Showcase clicked'),
+              range: [0.1, 0.2],
+              text: 'Home',
+              bg: '#ff4d4d', // Latar belakang hover 'About'
+              baseBg: '#002f45', // Latar belakang dasar 'About'
+              color: '#fff',
+              onClick: () => navigate('/'),
+              isHoverable: true,
             },
             {
-              range: [0.6, 1],
-              text: 'Recent Projects',
-              bg: 'rgba(255,255,255,0.6)',
-              color: 'cadetblue',
-              onClick: () => console.log('Recent Projects clicked'),
+              range: [0.2, 0.8],
+              text: 'Home',
+              bg: 'rgba(0, 0, 0, 0.3)',
+              color: '#fff',
+              isHoverable: false,
+            },
+
+            {
+              range: [0.9, 0.95],
+              text: 'Tap to top',
+              baseBg: '#ff4d4d',
+              bg: 'rgba(0, 0, 0, 0.3)',
+              color: '#fff',
+              onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+              isHoverable: true,
+            },
+            {
+              range: [0.9, 1],
+              text: 'Get in touch',
+              baseBg: '#002f45',
+              bg: 'rgba(0, 0, 0, 0.3)',
+              color: '#fff',
+              onClick: () => navigate('/contact'),
+              isHoverable: true,
             },
           ]}
-          position={{ top: '34%', left: '2rem' }}
         />
       </div>
     </PageTransition>

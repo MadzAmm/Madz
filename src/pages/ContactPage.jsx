@@ -104,10 +104,10 @@ export default function ContactPage() {
     {
       range: [0.7, 0.8],
       text: 'Tap to top',
-      hoverText: 'Hi',
-      baseBg: '',
-      bg: 'rgba(75, 61, 61, 0.6)',
-      color: 'cadetblue',
+      hoverText: 'Tap!',
+      baseBg: '#ff4d4d',
+      bg: '#002f45',
+      color: '#fff',
       onClick: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
     },
     {
@@ -125,10 +125,10 @@ export default function ContactPage() {
           ? 'rgba(40, 167, 69, 0.8)'
           : formState === 'error'
           ? 'rgba(220, 53, 69, 0.8)'
-          : 'rgba(255, 255, 255, 0)',
+          : '#002f45',
       color:
         formState === 'success' || formState === 'error' ? '#fff' : 'cadetblue',
-      bg: 'rgba(32,42,68,0.6)',
+      bg: '#15018833',
 
       onClick: handleSubmit, // Menghubungkan aksi klik dengan fungsi submit
     },
