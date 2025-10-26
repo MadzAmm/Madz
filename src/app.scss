@@ -6,12 +6,10 @@ html {
   overflow-x: clip;
 }
 body {
-  // background-color: rgb(37, 37, 41);
+  background-color: rgba(37, 37, 41, 0.05);
   color: #bcd4cc;
   margin-top: -32px;
 
-  background-color: rgba(255, 255, 255, 0.15);
-  // backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
