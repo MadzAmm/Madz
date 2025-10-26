@@ -8,6 +8,7 @@ import ContactSection from '../components/ContactSection/ContactSection';
 import Wave from '../components/MorphingWave/Wave';
 import Footer from '../components/hero/footer/Footer';
 import useResponsiveBubble from '../components/DateBubble/UseResponsiveBubble';
+import './pages.scss';
 
 export default function PortfolioPage() {
   const ref = useRef(null);

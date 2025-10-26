@@ -131,6 +131,15 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import './About.scss';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
+const openVariants = {
+  open: { transition: { staggerChildren: 0.2 } },
+  closed: { transition: { staggerChildren: 0.2, staggerDirection: -1 } },
+};
+const itemVariants = {
+  open: { y: 0, opacity: 1 },
+  closed: { y: 300, opacity: 0 },
+};
+
 // ===================================================================
 // Komponen Utama Halaman Tentang Saya
 // ===================================================================
@@ -165,9 +174,15 @@ const About = () => {
   // --- Akhir logic parallax ---
 
   return (
-    <motion.div className='page-container about-page-container'>
+    <motion.div
+      className='page-container about-page-container'
+      variants={openVariants}
+      initial='closed'
+      animate='open'>
       {/* Bagian 1: Header (Replikasi .project-intro) */}
-      <section className='project-intro about-intro'>
+      <motion.section
+        className='project-intro about-intro'
+        variants={itemVariants}>
         <h1 className='project-title'>About Me</h1>
         <div className='project-meta'>
           <div>
@@ -183,10 +198,11 @@ const About = () => {
             <p>Jakarta, Indonesia</p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Bagian 2: Gambar Parallax Penuh (Replikasi .parallax-section) */}
-      <section
+      <motion.section
+        variants={itemVariants}
         ref={fullParallaxRef}
         className='parallax-section'>
         <div className='parallax-image-wrapper'>
@@ -196,7 +212,7 @@ const About = () => {
             style={{ y: fullParallaxY, scale: 1.15 }}
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* ========================================================= */}
       {/* BAGIAN BARU: SERVICES SECTION (di bawah gambar pertama) */}

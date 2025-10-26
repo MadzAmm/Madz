@@ -6,7 +6,7 @@ html {
   overflow-x: clip;
 }
 body {
-  background-color: #252529ff;
+  background-color: rgb(37, 37, 41);
   color: #bcd4cc;
   margin-top: -32px;
 }
@@ -20,4 +20,56 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* --- 1. Variabel Tinggi Navbar --- */
+// Atur tinggi dasar Navbar Anda di sini
+$navbar-base-height: 60px;
+
+/* --- 2. Gaya Navbar (Melayang & Tembus) --- */
+// Ini adalah class untuk komponen <Navbar /> Anda
+.navbar-component {
+  // --- Efek Melayang (Fixed) ---
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  // --- Efek Tembus (Liquid Glass) ---
+  background-color: rgba(37, 37, 41, 0.7); // 70% transparan
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); // Untuk Safari
+
+  // --- Penyesuaian Safe Area (iOS) ---
+  // Menambah padding di DALAM navbar untuk status bar (jam/baterai)
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  // Tinggi total = tinggi dasar + tinggi status bar
+  height: calc($navbar-base-height + env(safe-area-inset-top));
+
+  // (Contoh style tambahan agar konten navbar rapi)
+  display: flex;
+  align-items: center; // Membuat item di tengah (vertikal)
+  padding: 0 1.5rem; // Padding horizontal
+}
+
+/* --- 3. Gaya Wadah Halaman --- */
+// Ini adalah class untuk setiap halaman Anda
+// (Homepage, ServicesPage, dll)
+.page-container {
+  // KUNCI 1: Mendorong konten ke bawah seukuran Navbar
+  padding-top: calc($navbar-base-height + env(safe-area-inset-top));
+
+  // KUNCI 2: Memberi ruang di bawah untuk navigasi bawah Safari
+  padding-bottom: env(safe-area-inset-bottom);
+
+  // KUNCI 3: Memberi ruang di samping
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  // Memastikan halaman setidaknya setinggi layar
+  min-height: 100vh;
 }

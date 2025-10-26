@@ -47,11 +47,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15vh 6vw 10vh 6vw;
+  padding: 5vh 6vw;
   box-sizing: border-box;
 
   @media (max-width: 760px) {
     padding: 3vh 4vh;
+    margin-top: -5vh;
   }
 
   .project-title {
@@ -330,9 +331,9 @@
     margin-right: auto; // Tengah di mobile
   }
   @media (max-width: 768px) {
-    width: 100px; /* Ukuran wrapper */
-    height: 100px;
-    margin-bottom: 5vh;
+    width: 90px; /* Ukuran wrapper */
+    height: 90px;
+    margin-bottom: 3vh;
   }
 }
 

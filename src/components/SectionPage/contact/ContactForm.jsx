@@ -246,9 +246,8 @@ const styles = {
     color: '#FFFFFF',
     padding: 'clamp(2rem, 5vw, 4rem)',
     fontFamily: 'system-ui, sans-serif',
-    minHeight: '100svh',
+    minHeight: '100vh',
     width: '100vw',
-    marginLeft: '-32px',
   },
   header: {
     display: 'flex',

@@ -139,8 +139,12 @@ $text-color-light: #ffffff;
   //width: auto; // Biarkan lebar ditentukan oleh child
   width: 30%; // Lebar default untuk desktop
   position: fixed;
-  top: 2.8%;
-  left: 2%;
+  // top: 2.8%;
+  // left: 2%;
+  top: calc(env(safe-area-inset-top) + 2.8%);
+
+  // Lakukan hal yang sama untuk sisi kiri
+  left: calc(env(safe-area-inset-left) + 2%);
   z-index: 999;
 }
 

@@ -25,31 +25,6 @@ export default function Homepage() {
   const containerRef = useRef(null);
   const { position, motionConfig } = useResponsiveBubble();
 
-  // const x = useSpring(
-  //   useTransform(
-  //     scrollYProgress,
-  //     [0, 0.1, 0.3, 0.7, 1],
-  //     [350, -500, -200, 200, -280]
-  //   ),
-  //   { stiffness: 100, damping: 20 }
-  // );
-
-  // const y = useSpring(
-  //   useTransform(scrollYProgress, [0, 0.1, 0.3, 1], [300, 300, 200, 340]),
-  //   { stiffness: 100, damping: 20 }
-  // );
-
-  // const scale = useTransform(
-  //   scrollYProgress,
-  //   [0, 0.1, 0.3, 0.7, 1],
-  //   [1, 0.5, 3, 0.5, 1]
-  // );
-
-  // const [isAtTop, setIsAtTop] = useState(true);
-  // useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-  //   setIsAtTop(latest < 0.01);
-  // });
-
   return (
     <PageTransition label='Homepage'>
       <div

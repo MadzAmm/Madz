@@ -5,6 +5,7 @@ import DateBubble from '../components/DateBubble/DateBubble';
 import LiquidGlass from '../components/LiquidGlass/LiquidGlass';
 import ProjectPage from '../components/project/ProjectPage';
 import { useNavigate } from 'react-router-dom';
+import './pages.scss';
 
 /**
  * Hook kustom untuk mengecek media query secara dinamis.

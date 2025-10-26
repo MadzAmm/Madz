@@ -6,6 +6,7 @@ import DateBubble from '../components/DateBubble/DateBubble';
 import ContactForm from '../components/SectionPage/contact/ContactForm.jsx';
 import useResponsiveBubble from '../components/DateBubble/UseResponsiveBubble';
 import Footer from '../components/hero/footer/Footer';
+import './pages.scss';
 
 export default function ContactPage() {
   const ref = useRef(null);
@@ -136,7 +137,9 @@ export default function ContactPage() {
 
   return (
     <PageTransition label='Contact'>
-      <div ref={ref}>
+      <div
+        className='pageWrapper'
+        ref={ref}>
         <DateBubble
           mode='custom'
           scrollYProgress={scrollYProgress}
