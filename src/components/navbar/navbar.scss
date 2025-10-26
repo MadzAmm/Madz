@@ -250,6 +250,28 @@ $text-color-light: #ffffff;
       // 2. Memposisikan lingkaran
       top: 8%; // Posisikan di tengah secara vertikal
       transform: translateY(-50%);
+
+      // --- TAMBAHAN STYLE DI SINI ---
+      // Wrapper untuk Lottie
+      .lottie-wrapper {
+        position: absolute;
+        inset: 0; // shorthand untuk top/right/bottom/left: 0
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; // Pastikan Lottie tidak keluar dari lingkaran
+
+        // Style untuk komponen Lottie
+        .lottie-animation-inside {
+          // Sesuaikan ukuran Lottie agar pas di dalam lingkaran
+          // (misal 70% dari ukuran lingkaran 40px)
+          width: 70%;
+          height: 70%;
+        }
+      }
+      // --- AKHIR TAMBAHAN STYLE ---
     }
   }
 }

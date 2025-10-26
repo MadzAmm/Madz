@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useScroll, useMotionValue } from 'framer-motion';
 import PageTransition from './PageTransition';
 import DateBubble from '../components/DateBubble/DateBubble';
-import HeroAbout from '../components/SectionPage/heroAbout/HeroAbout';
+// import HeroAbout from '../components/SectionPage/heroAbout/HeroAbout';
 import { useNavigate } from 'react-router-dom';
 import useResponsiveBubble from '../components/DateBubble/UseResponsiveBubble';
 import StickyTextMerge from '../components/SectionPage/coba/StickyTextMerge';
@@ -12,7 +12,7 @@ import Footer from '../components/hero/footer/Footer';
 import './AboutPage.scss';
 import CoachingApproach from '../components/CoachingApproach/CoachingApproach';
 import TechBubbles from '../components/TechBubbles/TechBubbles';
-
+import About from '../components/SectionPage/heroAbout/About';
 const sectionStyle = {
   width: '100%',
   height: '100vh',
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <div
         className='pageWrapper'
         ref={ref}>
-        <HeroAbout />
+        <About />
         <StickyTextMerge />
         <div className='coaching-container'>
           <CoachingApproach />

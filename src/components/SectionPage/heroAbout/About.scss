@@ -1,16 +1,345 @@
-// Import semua gaya dari ProjectPage.scss
-// Sesuaikan path-nya jika perlu.
-@import './ProjectPage.scss';
-
-// --- Override Khusus untuk Halaman "About" ---
+// src/components/About/About.scss
+// Impor variabel dan mixin
+@import '../../project/projectPage.scss';
 
 .about-page-container {
-  // Karena kita menghapus <CustomCursor />,
-  // kita perlu mengembalikan kursor default browser.
+  // Reset kursor agar kembali normal di halaman About
   cursor: default;
 }
 
-// Tidak perlu styling lain!
-// Semua kelas seperti .project-intro, .parallax-section,
-// dan .typography-section-reworked sudah otomatis
-// mendapatkan gayanya dari file ProjectPage.scss yang di-impor.
+// Mixin Efek Kedalaman
+@mixin inner-depth-effect {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at center,
+      transparent 60%,
+      rgba(0, 0, 0, var(--depth-opacity)) 100%
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to left,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, var(--depth-opacity)) 0%,
+      transparent var(--depth-size)
+    );
+}
+
+// Section Intro
+.about-intro {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15vh 6vw 10vh 6vw;
+  box-sizing: border-box;
+
+  @media (max-width: 760px) {
+    padding: 3vh 4vh;
+  }
+
+  .project-title {
+    font-family: var(--font-heading);
+    font-size: clamp(0.7rem, 10vw, 5rem);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    margin: 0 0 6vh 0;
+  }
+
+  .project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 0 0 -10vh 0;
+
+    div {
+      border-top: 1.5px solid #8888881e;
+      padding: 1rem 0rem;
+    }
+
+    span {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      margin: 0.6rem 0 0 0;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      gap: 1rem;
+      margin: 0 0 -16vh 0;
+      div {
+        padding: 0.5rem 0rem;
+      }
+    }
+  }
+}
+
+// Section Parallax Penuh
+.parallax-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: 760px) {
+    height: 70vh;
+  }
+
+  .parallax-image-wrapper {
+    position: sticky;
+    top: 0;
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
+    isolation: isolate;
+
+    &::after {
+      @include inner-depth-effect;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 0;
+    }
+  }
+}
+
+// Bagian Baru: Services Section (Mengikuti gaya gambar referensi)
+.services-section {
+  padding: 5vh 8vw 10vh;
+
+  background-color: var(--bg-light); //
+
+  @media (max-width: 760px) {
+    padding: 5vh 8vw 5vh;
+  }
+
+  .services-header {
+    margin-bottom: 5vh;
+    @media (max-width: 760px) {
+      margin-bottom: 0vh;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 6vw, 2.5rem);
+      font-weight: 100;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 1vh 0 2vh 0;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    @media (max-width: 760px) {
+      gap: 1rem;
+    }
+
+    .service-item {
+      .service-number {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        @media (max-width: 760px) {
+          display: none;
+        }
+      }
+      .service-name {
+        border-top: 2px solid #8888881e;
+        font-family: var(--font-heading);
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        font-weight: 500;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        margin-bottom: 1rem;
+        @media (max-width: 760px) {
+          margin-top: 1rem;
+        }
+      }
+      .service-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #444;
+        @media (max-width: 760px) {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+// Section Tipografi
+.typography-section-reworked {
+  height: 120vh;
+
+  position: sticky;
+  top: -15vh;
+  z-index: 1;
+
+  background-color: #e1dad2;
+  display: flex;
+  align-items: center;
+  padding: 10vh 5vw;
+  box-sizing: border-box;
+  gap: 8vw; // Tambahkan jarak antar kolom
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 15vh 5vw;
+    height: auto; // Di mobile biarkan tinggi fleksibel
+    top: 0; // Tidak perlu sticky di mobile jika flex-direction column
+  }
+  @media (max-width: 768px) {
+    height: 100vh; // Biarkan tinggi fleksibel
+    flex-direction: column-reverse;
+  }
+}
+
+// Konten Tipografi
+.typography-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // padding-right: 5vw; // Dihapus karena gap sudah ada
+  z-index: 5;
+  text-align: left; // Atur teks rata kiri
+
+  @media (max-width: 992px) {
+    padding-right: 0;
+    align-items: center;
+    flex: none;
+    width: 100%;
+    order: 1; // Pindah teks ke bawah gambar di mobile
+    text-align: center; // Kembali ke tengah di mobile
+  }
+
+  .typography-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 4vw, 2rem);
+    font-weight: 100;
+    line-height: 1.2;
+    margin: 0 0 2vh 0;
+  }
+  .typography-paragraph {
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+    line-height: 1.6;
+    max-width: 400px;
+    color: #444;
+    @media (max-width: 992px) {
+      max-width: 90%;
+    }
+  }
+}
+
+.typography-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: auto;
+  max-width: 50%; // Tetap di 40% untuk desktop agar tidak terlalu lebar
+  order: 0; // Gambar di kiri
+
+  @media (max-width: 992px) {
+    flex: none;
+    max-width: 70%;
+    margin-bottom: 5vh;
+    width: 100%;
+    order: 0; // Gambar di atas teks di mobile
+  }
+  @media (max-width: 760px) {
+    max-width: 100%;
+    margin-bottom: -8vh;
+  }
+}
+.typography-parallax-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  isolation: isolate;
+
+  &::after {
+    @include inner-depth-effect;
+  }
+
+  img {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+}
+
+// Lottie Globe Animation
+.lottie-globe-wrapper {
+  position: relative;
+  width: 150px; /* Ukuran wrapper */
+  height: 150px;
+  border-radius: 50%;
+  background-color: #3569c3;
+  // background-color: var(--primary-blue); /* Warna biru lingkaran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20vh; // Jarak ke heading
+  // box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3); // Sedikit bayangan
+  flex-shrink: 0; // Pastikan tidak menyusut
+
+  .lottie-globe {
+    width: 100%; // Sesuaikan agar globe tidak terlalu kecil
+    height: 100%;
+  }
+
+  @media (max-width: 992px) {
+    margin-left: auto;
+    margin-right: auto; // Tengah di mobile
+  }
+  @media (max-width: 768px) {
+    width: 100px; /* Ukuran wrapper */
+    height: 100px;
+    margin-bottom: 5vh;
+  }
+}
+
+// Kelas tambahan untuk About page, memastikan cursor default
+.about-page-container {
+  cursor: default; // Pastikan kursor normal di halaman ini
+}
+
+// Pastikan tidak ada overflow-y: hidden/scroll/auto di parent manapun
+// (Ini perlu dicek di App.js atau komponen layout utama)
