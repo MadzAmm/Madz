@@ -4,13 +4,20 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-x: clip;
+  // PINDAHKAN EFEK TEMBUS ANDA KE SINI
+  background-color: rgba(
+    37,
+    37,
+    41,
+    0.5
+  ); // (Saya ganti dari putih ke $bg-color Anda)
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 body {
-  background-color: rgba(37, 37, 41, 0.05);
+  background-color: rgba(37, 37, 41, 0);
   color: #bcd4cc;
   margin-top: -32px;
-
-  -webkit-backdrop-filter: blur(12px);
 }
 
 // body::before {

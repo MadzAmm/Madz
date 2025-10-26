@@ -132,12 +132,12 @@ import './About.scss';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const openVariants = {
-  open: { transition: { staggerChildren: 0.2 } },
-  closed: { transition: { staggerChildren: 0.2, staggerDirection: -1 } },
+  open: { transition: { staggerChildren: 0.1 } },
+  closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
 };
 const itemVariants = {
   open: { y: 0, opacity: 1 },
-  closed: { y: 300, opacity: 0 },
+  closed: { y: 200, opacity: 0 },
 };
 
 // ===================================================================
