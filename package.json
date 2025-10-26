@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://madzamm.github.io/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00000000",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
