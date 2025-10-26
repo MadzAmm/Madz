@@ -157,7 +157,7 @@ export default function ContactPage() {
           isMobile={isMobile}
         />
 
-        <div style={{ marginLeft: '-32px', width: '100vw' }}>
+        <div style={{ width: '100vw' }}>
           <Footer />
         </div>
       </div>
